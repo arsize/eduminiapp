@@ -1,0 +1,7 @@
+@import "./commoncss/common.wxss";
+page {
+  background: #f5f4f7;
+}
+.van-cell {
+  padding: 40rpx !important;
+}

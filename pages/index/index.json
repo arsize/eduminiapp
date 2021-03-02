@@ -1,0 +1,10 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "navBar": "../../miniprogram_npm/miniprograms-navigation-bar/index",
+        "dialog": "../component/dialog/dialog",
+        "bottomdialog": "../component/bottomdialog/bottomdialog",
+        "van-icon": "../../miniprogram_npm/@vant/weapp/icon/index",
+        "van-notice-bar": "../../miniprogram_npm/@vant/weapp/notice-bar/index"
+    }
+}

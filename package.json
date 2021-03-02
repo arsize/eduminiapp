@@ -1,0 +1,21 @@
+{
+  "name": "eduminiapp",
+  "version": "1.0.0",
+  "description": "教育类微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "reset": "cd utils & node resetapp.js & cd ..",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsize/eduminiapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arsize/eduminiapp/issues"
+  },
+  "homepage": "https://github.com/arsize/eduminiapp#readme"
+}
