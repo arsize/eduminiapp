@@ -1,0 +1,14 @@
+<view class="bg-triangle" wx:if="{{switch}}">
+	<view class="btn" bind:tap="switchBtn">切换背景</view>
+</view>
+<view class="bg-triangle-none" wx:else>
+	<view class="btn" bind:tap="switchBtn">切换背景</view>
+</view>
+
+<view class="bottom-bar-content">
+	<view class="bottom-bar-item">首页</view>
+	<view class="bottom-bar-item">我的作品</view>
+	<view class="bottom-bar-item">消息</view>
+	<view class="bottom-bar-item">我的</view>
+</view>
+
