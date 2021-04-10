@@ -1,0 +1,9 @@
+{
+	"route": [
+		"pages/index/index",
+		"pages/login/login",
+		"pages/message/message",
+		"pages/my/my",
+		"pages/myproject/myproject"
+	]
+}
