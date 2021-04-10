@@ -1,0 +1,96 @@
+page {
+  background-color: white;
+}
+.mobilelogin {
+  width: 100%;
+  padding: 40rpx;
+  margin-top: 115rpx;
+  box-sizing: border-box;
+}
+.mobilelogin .topmobile {
+  width: 95%;
+  height: 98rpx;
+  margin: 0 auto;
+  display: flex;
+}
+.mobilelogin .topmobile .top {
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 42rpx;
+  margin-bottom: 10rpx;
+}
+.mobilelogin .topmobile .mobileinput {
+  width: 85%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 900;
+  background: #f7f7f7;
+  border-radius: 20rpx;
+  padding-left: 32rpx;
+  box-sizing: border-box;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.mobilelogin .rightBlock {
+  position: relative;
+  background: #f7f7f7;
+  width: 15%;
+  height: 100%;
+  box-sizing: border-box;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.mobilelogin .topmobile .rightBlock .delicon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.mobilelogin .topmobile .mobileinput .weui-input {
+  padding: 33rpx 0;
+  width: 100%;
+}
+.mobilelogin .mobileBtn {
+  width: 630rpx;
+  height: 100rpx;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888888;
+  border-radius: 12rpx;
+  margin: 150rpx auto;
+  margin-top: 42rpx;
+}
+.mobilelogin .mobileBtnactive {
+  width: 630rpx;
+  height: 100rpx;
+  background-color: #166cff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 20rpx;
+  margin: 150rpx auto;
+  margin-top: 42rpx;
+}
+.bottomText {
+  width: 100%;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  bottom: 50rpx;
+  text-align: center;
+  color: #999999;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.bottomText .text {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

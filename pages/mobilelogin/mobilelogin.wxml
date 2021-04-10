@@ -1,0 +1,40 @@
+<view class="mobilelogin">
+	<view class="topmobile">
+		<view class="mobileinput">
+			<input
+			 type="number"
+			 style="width:100%;padding:29rpx 0;"
+			 maxlength="11"
+			 value="{{inputval}}"
+			 bindinput="inputval"
+			 class="weui-input"
+			 focus="{{autofocus}}"
+			 placeholder="输入手机号"
+			/>
+		</view>
+		<view class="rightBlock">
+			<image
+			 wx:if="{{inputval}}"
+			 catch:tap="delmobile"
+			 class="delicon"
+			 style="padding:0 10rpx;width:40rpx;height:40rpx;"
+			 src="{{baseUrlImg + 'icon_input_delete@2x.png'}}"
+			/>
+		</view>
+	</view>
+	<view
+	 wx:if="{{checkSuccess == 'hide'}}"
+	 class="mobileBtn"
+	 bind:tap="checkInputSubmit"
+	>确定
+	</view>
+	<view
+	 wx:elif="{{checkSuccess == 'active'}}"
+	 bind:tap="getVerification"
+	 class="mobileBtnactive"
+	>确定
+	</view>
+	<view wx:elif="{{checkSuccess == 'loading'}}" class="mobileBtnactive">开始验证
+	</view>
+</view>
+

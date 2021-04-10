@@ -1,0 +1,27 @@
+<view class="top">
+    <image style="width:90rpx;height:66rpx;margin-right:26rpx;" src="{{baseUrlImg + 'logo_01.png'}}"></image>
+    <input type="text" placeholder="智能自行车" class="search_input">
+        <view class="input_text_line"></view>
+        <image class="input_icon" src="{{baseUrlImg + 'icon_48_01.png'}}"></image>
+    </input>
+</view>
+<view class="line-swiper"></view>
+<swiper style="padding:0 40rpx;margin-top:29rpx;" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{1000}}">
+    <block wx:for="{{banner_background}}" wx:key="*this">
+        <swiper-item>
+            <view class="swiper-item">
+                <image style="width:670rpx;height:294rpx;" src="{{item}}"></image>
+            </view>
+        </swiper-item>
+    </block>
+</swiper>
+<view class="center_line">
+    <view class="text">学生作品展示</view>
+    <view class="time">发布时间</view>
+</view>
+<view class="body_content">
+    <view class="element_item" wx:for="{{elements}}" :key="index">
+    
+    </view>
+</view>
+<my-tabbar list="{{tabItemList}}"></my-tabbar>

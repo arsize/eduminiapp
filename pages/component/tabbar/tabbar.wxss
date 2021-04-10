@@ -1,0 +1,47 @@
+.weui-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.weui-flex__item {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1
+}
+
+.menu-item {
+    height: 100rpx;
+    text-align: center;
+    padding-top: 5rpx;
+}
+
+.img {
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+    margin: auto;
+}
+
+.clear {
+    clear: both;
+}
+
+.tab-bar {
+    position: fixed;
+    width: 100%
+}
+
+.tabbar_text {
+    font-size: 22rpx;
+    position: relative;
+    top: 0rpx;
+}
+
+.tabbarContainer {
+    border-radius: 29.33rpx 29.33rpx 0 0;
+    box-shadow: 0 -24rpx 73rpx 0 rgba(230, 235, 243, 0.50);
+    background-color: white;
+    height: 164rpx;
+}

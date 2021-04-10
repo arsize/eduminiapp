@@ -4,6 +4,8 @@
 		"pages/login/login",
 		"pages/message/message",
 		"pages/my/my",
-		"pages/myproject/myproject"
+		"pages/myproject/myproject",
+		"pages/mobilelogin/mobilelogin",
+		"pages/myclass/myclass"
 	]
 }

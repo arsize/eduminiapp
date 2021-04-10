@@ -4,7 +4,9 @@
 		"pages/login/login",
 		"pages/message/message",
 		"pages/my/my",
-		"pages/myproject/myproject"
+		"pages/myproject/myproject",
+		"pages/mobilelogin/mobilelogin",
+		"pages/myclass/myclass"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
@@ -13,17 +15,8 @@
 		"navigationBarTextStyle": "black",
 		"onReachBottomDistance": 50
 	},
-	"tabBar": {
-		"list": [
-			{
-				"pagePath": "pages/index/index",
-				"text": "首页"
-			},
-			{
-				"pagePath": "pages/logs/index",
-				"text": "日志"
-			}
-		]
+	"usingComponents": {
+		"my-tabbar": "pages/component/tabbar/tabbar"
 	},
 	"style": "v2",
 	"sitemapLocation": "sitemap.json",

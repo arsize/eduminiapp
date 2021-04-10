@@ -1,0 +1,17 @@
+<view class="login_container">
+    <view class="login_top">
+        <image class="" src="{{baseUrlImg + 'logo_02.png'}}" style="width:240rpx;height:180rpx;"></image>
+    </view>
+    <view class="btn_box">
+        <button style="width: 550rpx;height: 84rpx;border-radius: 42rpx;color: #013CBF; font-size: 26rpx;" class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+            微信一键登录
+        </button>
+        <view bind:tap="gotomobile" style="font-size:26rpx;width: 550rpx;height: 84rpx;border-radius: 42rpx;" class="loginBtnByMobile">
+            手机号验证码登录
+        </view>
+    </view>
+</view>
+<view class="bottom_xieyi">
+    <text style="color:#466BC3;">登录代表您已同意</text>
+    创新教育用户协议、隐私协议
+</view>

@@ -1,38 +1,39 @@
-//Page Object
+var app = getApp()
+
 Page({
     data: {
-        
+
     },
     //options(Object)
-    onLoad: function(options){
-        
-    },
-    onReady: function(){
-        
-    },
-    onShow: function(){
-        
-    },
-    onHide: function(){
+    onLoad: function (options) {
 
     },
-    onUnload: function(){
+    onReady: function () {
 
     },
-    onPullDownRefresh: function(){
+    onShow: function () {
+        app.initTabBar(this, 3);
+    },
+    onHide: function () {
 
     },
-    onReachBottom: function(){
+    onUnload: function () {
 
     },
-    onShareAppMessage: function(){
+    onPullDownRefresh: function () {
 
     },
-    onPageScroll: function(){
+    onReachBottom: function () {
+
+    },
+    onShareAppMessage: function () {
+
+    },
+    onPageScroll: function () {
 
     },
     //item(index,pagePath,text)
-    onTabItemTap:function(item){
+    onTabItemTap: function (item) {
 
     }
 });

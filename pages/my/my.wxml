@@ -1,0 +1,2 @@
+<navBar background="#F7FCFE" back="{{true}}" home="{{false}}"></navBar>
+<my-tabbar list="{{tabItemList}}"></my-tabbar>

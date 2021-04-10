@@ -1,0 +1,10 @@
+<view wx:if="{{list.length > 1}}" class="tabbarContainer weui-flex tab-bar" style="color: {{color}}; background: {{backgroundColor}}; {{position=='top'? 'top: 0' : 'bottom: 0'}};">
+    <block wx:for="{{list}}" wx:key="pagePath">
+        <view hover-class="none" data-set="{{item.pagePath}}" bind:tap="gotoroute" class="weui-flex__item menu-item {{item.class}}" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : selectedColor) : ''}}" wx:if="{{item.hidden!==true}}">
+            <image src="{{item.selectedIconPath}}" wx:if="{{item.active}}" class="img"></image>
+            <image src="{{item.iconPath}}" wx:if="{{!item.active}}" class="img"></image>
+            <text class='tabbar_text'>{{item.text}}</text>
+        </view>
+    </block>
+    <view class="clear"></view>
+</view>

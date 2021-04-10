@@ -12,7 +12,7 @@ Page({
         
     },
     onShow: function(){
-        app.initTabBar(this,2);
+        app.initTabBar(this, 1);
     },
     onHide: function(){
 
