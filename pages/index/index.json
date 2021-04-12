@@ -1,5 +1,7 @@
 {
     "navigationBarTitleText": "",
     "usingComponents": {
-    }
+        "van-icon": "@vant/weapp/icon/index"
+    },
+    "disableScroll": true
 }

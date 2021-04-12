@@ -1,0 +1,48 @@
+page {
+    background-color: #F3F5F9;
+}
+
+.top {
+    width: 100%;
+    height: 500rpx;
+    background-color: #417CFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userphoto {
+    width: 180rpx;
+    height: 245rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userimg {
+    width: 100%;
+    height: 100%;
+}
+
+.introduce {
+    background-color: #fff;
+    padding: 40rpx;
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    color: #202123;
+}
+
+.introduce_top {
+    box-sizing: border-box;
+    margin-bottom: 40rpx;
+}
+
+.bottom_line {
+    width: 100%;
+    text-align: center;
+    color: #202123;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40rpx;
+}

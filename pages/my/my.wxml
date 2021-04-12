@@ -1,2 +1,18 @@
-<navBar background="#F7FCFE" back="{{true}}" home="{{false}}"></navBar>
+<view class="top">
+    <view class="userphoto">
+        <image class="userimg" src="{{baseUrlImg + 'tx_200_03.png'}}"></image>
+        <view style="margin-top:20rpx;font-size:36rpx;color:#fff;">张月老师</view>
+    </view>
+</view>
+<view class="introduce">
+    <view class="introduce_top">
+        <view style="font-weight:bold;font-size:30rpx;">个人简介</view>
+    </view>
+    <view>老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人…</view>
+    <view class="bottom_line">展开全部</view>
+</view>
+<view>
+    <view class="left"></view>
+    <view class="right"></view>
+</view>
 <my-tabbar list="{{tabItemList}}"></my-tabbar>

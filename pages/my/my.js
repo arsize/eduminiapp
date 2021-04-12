@@ -2,7 +2,7 @@ var app = getApp()
 
 Page({
     data: {
-
+        baseUrlImg: app.globalData.baseUrlImg,
     },
     //options(Object)
     onLoad: function (options) {

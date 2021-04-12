@@ -1,5 +1,5 @@
 page {
-    background-image: url("http://47.105.220.82:8081/huadeen/img/bg-main.png");
+    background-image: url("http://121.4.213.7/img/bg-main.png");
     background-size: 160rpx 161rpx;
     background-repeat: repeat;
 }
@@ -28,14 +28,14 @@ page {
 
 .loginBtnByMobile {
     background: #061E58;
-    border: 1 solid rgba(255, 255, 255, 0.5);
+    border: 1rpx solid rgba(255, 255, 255, 0.3);
     border-radius: 42rpx;
     border-radius: 42rpx;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
-    margin-top: 69rpx;
+    margin-top: 50rpx;
 }
 
 .bottom_xieyi {

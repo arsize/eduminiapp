@@ -48,8 +48,42 @@ page {
 }
 
 .line-swiper {
-    width: 100%;
-    height: 34rpx;
+    width: 90%;
+    margin: 0 auto;
+    height: 42rpx;
+    display: flex;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 30rpx;
+}
+
+.line-swiper::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.line-swiper .swiper-item {
+    width: 136rpx;
+    margin-right: 56rpx;
+}
+
+.swiper-item .line {
+    width: 26rpx;
+    height: 4rpx;
+    background-color: #013CBF;
+    border-radius: 2rpx;
+    margin: 0 auto;
+}
+
+.noline {
+    width: 26rpx;
+    height: 4rpx;
+    background-color: transparent;
+    border-radius: 2rpx;
+    margin: 0 auto;
 }
 
 .center_line {
@@ -57,7 +91,6 @@ page {
     padding: 0 40rpx;
     box-sizing: border-box;
     display: flex;
-    margin-top: 50rpx;
     align-items: center;
     justify-content: space-between;
 }
@@ -72,14 +105,24 @@ page {
     color: silver;
 }
 
+.bujucontent {
+    margin-top: 30rpx;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 650rpx);
+}
+
 .body_content {
     padding: 0 40rpx;
-    height: 500rpx;
+    position: absolute;
+    top: 40rpx;
+    bottom: 0;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 50rpx;
+    margin-top: 30rpx;
+    padding-bottom: 50rpx;
     overflow-y: scroll;
 }
 
@@ -90,4 +133,44 @@ page {
     box-shadow: 0 24rpx 48rpx 0 rgba(1, 60, 191, 0.10);
     border-radius: 29rpx;
     background-color: white;
+}
+
+.element_item .element_top {
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 29rpx;
+    border-top-right-radius: 29rpx;
+}
+
+.element_bottom {
+    padding: 24rpx;
+    box-sizing: border-box;
+}
+
+.element_tools_list {
+    display: flex;
+}
+
+.bottom_line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25rpx;
+    color: #0E0F11;
+    font-size: 20rpx;
+}
+
+.element_tools_list .item {
+    font-size: 22rpx;
+    display: flex;
+    color: #202123;
+    margin-top: 10rpx;
+    align-items: center;
+    margin-right: 30rpx;
+}
+
+.element_item_name {
+    font-size: 28rpx;
+    color: #202123;
+    font-weight: bold;
 }

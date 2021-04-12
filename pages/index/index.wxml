@@ -5,23 +5,51 @@
         <image class="input_icon" src="{{baseUrlImg + 'icon_48_01.png'}}"></image>
     </input>
 </view>
-<view class="line-swiper"></view>
-<swiper style="padding:0 40rpx;margin-top:29rpx;" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{1000}}">
+<view class="line-swiper">
+    <view class="swiper-item" style="{{lineActived == index?'font-weight:bold;font-size: 32rpx;':''}}" wx:for="{{lineSwiper}}" :key="index">
+        <view>{{item}}</view>
+    </view>
+</view>
+<swiper style="padding:0 40rpx;margin-top:25rpx;" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{1000}}">
     <block wx:for="{{banner_background}}" wx:key="*this">
-        <swiper-item>
-            <view class="swiper-item">
-                <image style="width:670rpx;height:294rpx;" src="{{item}}"></image>
-            </view>
+        <swiper-item style="width:670rpx;height:294rpx;border-radius: 20rpx;">
+            <image style="width:100%;height:100%;" src="{{item}}"></image>
         </swiper-item>
     </block>
 </swiper>
-<view class="center_line">
-    <view class="text">学生作品展示</view>
-    <view class="time">发布时间</view>
-</view>
-<view class="body_content">
-    <view class="element_item" wx:for="{{elements}}" :key="index">
-    
+<view class="bujucontent">
+    <view class="center_line">
+        <view class="text">学生作品展示</view>
+        <view class="time">
+            发布时间
+            <van-icon name="arrow-down" />
+        </view>
+    </view>
+    <view class="body_content">
+        <view class="element_item" wx:for="{{elements}}" :key="index">
+            <view class="element_top" style="background: url({{baseUrlImg + 'index_project_covers.jpg'}});background-size:100%;"></view>
+            <view class="element_bottom">
+                <view class="element_item_name">海底世界</view>
+                <view class="element_tools_list">
+                    <view class="item">
+                        <van-icon name="fire-o" />
+                        <view>210</view>
+                    </view>
+                    <view class="item">
+                        <van-icon name="good-job-o" />
+                        <view>1098</view>
+                    </view>
+                    <view class="item">
+                        <van-icon name="chat-o" />
+                        <view>68</view>
+                    </view>
+                </view>
+                <view class="bottom_line">
+                    <view class="bottom_line_left">多个同学</view>
+                    <view class="bottom_line_right">6小时前</view>
+                </view>
+            </view>
+        </view>
     </view>
 </view>
 <my-tabbar list="{{tabItemList}}"></my-tabbar>
