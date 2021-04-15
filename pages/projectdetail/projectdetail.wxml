@@ -1,0 +1,13 @@
+<swiper style="width:100%;height:413rpx;" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{1000}}">
+    <block wx:for="{{banner_background}}" wx:key="*this">
+        <swiper-item>
+            <image style="width:100%;" src="{{item}}"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<view class="bodycenter">
+    <view class="userline">
+        <view class="userinfo"></view>
+        <view class="time"></view>
+    </view>
+</view>

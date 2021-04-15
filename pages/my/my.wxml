@@ -8,11 +8,18 @@
     <view class="introduce_top">
         <view style="font-weight:bold;font-size:30rpx;">个人简介</view>
     </view>
-    <view>老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人…</view>
-    <view class="bottom_line">展开全部</view>
+    <view style="{{show?'height:auto; transition: all 0.3s;':'height:100rpx;overflow-y:hidden; transition: all 0.3s;'}}">
+        老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人简介老师的个人人…
+    </view>
+    <view class="bottom_line" bind:tap="showsfn">{{show?'收起全部':'展开全部'}}</view>
 </view>
-<view>
-    <view class="left"></view>
-    <view class="right"></view>
+<view class="settools" bind:tap="gototools">
+    <view class="left" style="margin-left:40rpx;">
+        <image style="width:30rpx;height:30rpx;margin-right:16rpx;" src="{{baseUrlImg + 'icon_30_15.png'}}"></image>
+        <view style="margin-bottom:5rpx;">设置</view>
+    </view>
+    <view class="right" style="margin-right:39rpx;">
+        <image style="width:29rpx;height:29rpx;" src="{{baseUrlImg+'icon_30_11.png'}}"></image>
+    </view>
 </view>
 <my-tabbar list="{{tabItemList}}"></my-tabbar>

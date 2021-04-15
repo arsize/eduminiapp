@@ -1,0 +1,9 @@
+page{
+    background-color: #fff;
+}
+.bodycenter{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 38rpx 40rpx;
+
+}

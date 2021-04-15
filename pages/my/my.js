@@ -3,6 +3,7 @@ var app = getApp()
 Page({
     data: {
         baseUrlImg: app.globalData.baseUrlImg,
+        show: false
     },
     //options(Object)
     onLoad: function (options) {
@@ -14,26 +15,14 @@ Page({
     onShow: function () {
         app.initTabBar(this, 3);
     },
-    onHide: function () {
-
+    gototools() {
+        wx.navigateTo({
+            url: "/pages/settools/settools"
+        })
     },
-    onUnload: function () {
-
-    },
-    onPullDownRefresh: function () {
-
-    },
-    onReachBottom: function () {
-
-    },
-    onShareAppMessage: function () {
-
-    },
-    onPageScroll: function () {
-
-    },
-    //item(index,pagePath,text)
-    onTabItemTap: function (item) {
-
+    showsfn() {
+        this.setData({
+            show: !this.data.show
+        })
     }
 });

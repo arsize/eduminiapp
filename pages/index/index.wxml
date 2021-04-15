@@ -1,9 +1,9 @@
 <view class="top">
     <image style="width:90rpx;height:66rpx;margin-right:26rpx;" src="{{baseUrlImg + 'logo_01.png'}}"></image>
-    <input type="text" placeholder="智能自行车" class="search_input">
+    <view bindtap="gotosearch" type="text" class="search_input">
         <view class="input_text_line"></view>
         <image class="input_icon" src="{{baseUrlImg + 'icon_48_01.png'}}"></image>
-    </input>
+    </view>
 </view>
 <view class="line-swiper">
     <view class="swiper-item" style="{{lineActived == index?'font-weight:bold;font-size: 32rpx;':''}}" wx:for="{{lineSwiper}}" :key="index">

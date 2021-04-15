@@ -6,7 +6,10 @@
 		"pages/my/my",
 		"pages/myproject/myproject",
 		"pages/mobilelogin/mobilelogin",
-		"pages/myclass/myclass"
+		"pages/myclass/myclass",
+		"pages/projectdetail/projectdetail",
+		"pages/search/search",
+		"pages/settools/settools"
 	],
 	"window": {
 		"backgroundTextStyle": "light",

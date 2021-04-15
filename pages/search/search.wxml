@@ -1,0 +1,12 @@
+<view class="top">
+    <input auto-focus="{{true}}" type="text" placeholder="智能自行车" class="search_input">
+        <view class="input_text_line"></view>
+        <image class="input_icon" src="{{baseUrlImg + 'icon_48_01.png'}}"></image>
+    </input>
+</view>
+
+<view class="searchline"></view>
+<view class="searchlist">
+
+
+</view>
