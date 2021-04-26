@@ -101,6 +101,10 @@ Page({
         this.setData({
             checkSuccess: 'loading'
         })
+        wx.redirectTo({
+            url: `/pages/checkverification/checkverification?mobile=${this.data.inputval} & cominType=${this.data.cominType}`
+        })
+        return
         HTTP({
             url: '',
             methods: 'post',
@@ -131,7 +135,7 @@ Page({
             }, 1000);
 
         }, err => {
-            
+
         })
     },
     // 法律条款与隐私政策
@@ -146,7 +150,7 @@ Page({
         })
         this.setData({
             inputval: '',
-            checkSuccess:"hide"
+            checkSuccess: "hide"
 
         })
 

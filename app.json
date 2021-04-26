@@ -9,7 +9,8 @@
 		"pages/myclass/myclass",
 		"pages/projectdetail/projectdetail",
 		"pages/search/search",
-		"pages/settools/settools"
+		"pages/settools/settools",
+		"pages/checkverification/checkverification"
 	],
 	"window": {
 		"backgroundTextStyle": "light",

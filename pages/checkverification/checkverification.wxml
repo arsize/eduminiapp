@@ -1,0 +1,43 @@
+<view class="mobilelogin" bind:tap="getfocus">
+	<view class="topmobile">
+		<view class="top">输入验证码</view>
+		<view class="verification" style="color:#B2B2B2;font-size:28rpx;">
+			验证码已发送至{{aftermobile}}
+		</view>
+		<view class="mobileinput">
+			<view class="inputnum">
+				<view
+				 wx:for="{{cabitnetArr}}"
+				 wx:key="index"
+				 data-item="{{item}}"
+				 data-index="{{index}}"
+				 class="blockitem"
+				 style="{{index == focusIndex?'border-bottom: 2rpx solid #1a6eff;':''}}"
+				>
+					{{item}}
+				</view>
+				<input
+				 maxlength="4"
+				 value="{{inputValue}}"
+				 bindinput='inputchange'
+				 focus="{{autofocus}}"
+				 type="text"
+				 style="{{'left:'+(38 + (focusIndex * 114))+'rpx;'}}"
+				 class="positioninput"
+				/>
+			</view>
+		</view>
+		<view class="bottom">
+
+			<view class="bottomRight" wx:if="{{timeover}}">重新获取 ({{timeover}}s)</view>
+			<view
+			 class="bottomRight"
+			 bind:tap="restartget"
+			 style="color:#27C273;"
+			 wx:else
+			>重新获取
+			</view>
+		</view>
+	</view>
+</view>
+
