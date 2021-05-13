@@ -7,9 +7,9 @@
 		 bindgetphonenumber="getPhoneNumber">
             微信一键登录
         </button>
-        <!-- <view bind:tap="gotomobile" style="font-size:26rpx;width: 550rpx;height: 84rpx;border-radius: 42rpx;" class="loginBtnByMobile">
+        <view bind:tap="gotomobile" style="font-size:26rpx;width: 550rpx;height: 84rpx;border-radius: 42rpx;" class="loginBtnByMobile">
             手机号验证码登录
-        </view> -->
+        </view>
     </view>
 </view>
 <view class="bottom_xieyi">

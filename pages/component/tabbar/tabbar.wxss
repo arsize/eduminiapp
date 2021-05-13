@@ -40,8 +40,8 @@
 }
 
 .tabbarContainer {
-    border-radius: 29.33rpx 29.33rpx 0 0;
+    border-radius: 35rpx 35rpx 0 0;
     box-shadow: 0 -24rpx 73rpx 0 rgba(230, 235, 243, 0.50);
     background-color: white;
-    height: 164rpx;
+    height: 130rpx;
 }

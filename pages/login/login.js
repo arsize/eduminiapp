@@ -30,7 +30,7 @@ Page({
     // 获取用户手机号
     getPhoneNumber(e) {
         if (e.detail.errMsg == "getPhoneNumber:ok") {
-            // this.registered(e.detail);
+            this.registered(e.detail);
             console.log(e.detail)
         } else {
             this.setData({
@@ -38,4 +38,26 @@ Page({
             })
         }
     },
+    registered(detail) {
+        HTTP({
+            url: "/login/rigist",
+            methods: "post",
+            data: {
+                encryptedData: detail.encryptedData,
+                iv: detail.iv,
+                openId:wx.getStorageSync("logindata").openId,
+                sessionKey:wx.getStorageSync("logindata").sessionKey
+            }
+        }).then(res => {
+            wx.setStorageSync("logindata", res.data);
+
+            wx.showToast({
+                title: `登录成功`,
+                icon: 'success',
+                duration: 2000
+            })
+            this.userLogin()
+
+        })
+    }
 });

@@ -9,7 +9,8 @@ Page({
         lineActived: 0
     },
     onShow() {
-        app.initTabBar(this, 0);
+        app.initTabBar(this, 'tourist', 0);
+
     },
     gotosearch() {
         wx.navigateTo({

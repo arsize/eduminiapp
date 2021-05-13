@@ -109,7 +109,7 @@ page {
     margin-top: 30rpx;
     position: relative;
     width: 100%;
-    height: calc(100vh - 650rpx);
+    height: calc(100vh - 600rpx);
 }
 
 .body_content {

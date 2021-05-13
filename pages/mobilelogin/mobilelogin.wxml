@@ -37,4 +37,4 @@
 	<view wx:elif="{{checkSuccess == 'loading'}}" class="mobileBtnactive">开始验证
 	</view>
 </view>
-
+<my-tabbar list="{{tabItemList}}"></my-tabbar>

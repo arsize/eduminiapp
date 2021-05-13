@@ -7,13 +7,12 @@ Page({
     },
     //options(Object)
     onLoad: function (options) {
-
+        app.initTabBar(this, 'tourist', 1);
     },
     onReady: function () {
 
     },
     onShow: function () {
-        app.initTabBar(this, 3);
     },
     gototools() {
         wx.navigateTo({
