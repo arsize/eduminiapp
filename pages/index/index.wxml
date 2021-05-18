@@ -17,7 +17,7 @@
         </swiper-item>
     </block>
 </swiper>
-<view class="bujucontent">
+<view class="bujucontent"> 
     <view class="center_line">
         <view class="text">学生作品展示</view>
         <view class="time">

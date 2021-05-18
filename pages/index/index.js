@@ -1,3 +1,4 @@
+import { HTTP } from "../../utils/server";
 var app = getApp()
 
 Page({
@@ -10,7 +11,42 @@ Page({
     },
     onShow() {
         app.initTabBar(this, 'tourist', 0);
+        this.checkLoginStatus().then(res => {
+            console.log('xxx', res)
 
+        })
+
+    },
+    checkLoginStatus() {
+        return new Promise((resolve, reject) => {
+            this.login().then(res => {
+                resolve()
+            }, err => {
+                reject()
+            })
+
+        });
+    },
+    login() {
+        let that = this
+        return new Promise((resolve, reject) => {
+            wx.login({
+                success: (res) => {
+                    if (res.code) {
+                        HTTP({
+                            url: "wxLogin?code=" + res.code,
+                            methods: "post",
+                        }).then(login => {
+                            console.log('login', login)
+                            resolve(true)
+                        })
+                    }
+                },
+                fail: (err) => {
+                    reject()
+                },
+            })
+        })
     },
     gotosearch() {
         wx.navigateTo({

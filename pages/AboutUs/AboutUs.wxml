@@ -1,0 +1,25 @@
+<view class="AboutUs">
+    <view class="header">
+        <view class="name">
+            <image class="" src="{{ logindata.appLogo}}" mode="widthFix" lazy-load="false" >
+            </image>
+        </view>
+        <text class="version_number" wx:if="{{miniProgram.appId != 'wxb965b629b07b30f7'}}">V{{miniProgram.version}}</text>
+        <text class="version_number" wx:else>V{{miniProgram.version}}</text>
+    </view>
+    <view class="content">
+        <van-cell title="用户服务协议" is-link bind:click="ToContainer" data-set="3" />
+        <van-cell title="预付款协议" is-link bind:click="ToContainer" data-set="4" />
+        <view class="Business_hotline" bindtap="bindtel">
+            <view class="item">
+                <text>商务合作</text>
+                <text>400 660 2838</text>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        所有权归属xxx有限公司
+    </view>
+
+</view>
+

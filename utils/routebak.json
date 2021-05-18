@@ -10,6 +10,7 @@
 		"pages/projectdetail/projectdetail",
 		"pages/search/search",
 		"pages/settools/settools",
-		"pages/checkverification/checkverification"
+		"pages/checkverification/checkverification",
+		"pages/AboutUs/AboutUs"
 	]
 }
