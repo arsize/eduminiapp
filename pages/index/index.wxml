@@ -27,7 +27,7 @@
     </view>
     <view class="body_content">
         <view class="element_item" wx:for="{{elements}}" wx:key="index">
-            <view class="element_top" style="background: url({{baseUrlImg + 'index_project_covers.jpg'}});background-size:100%;"></view>
+            <view class="element_top" bind:tap="gotodetail" style="background: url({{baseUrlImg + 'index_project_covers.jpg'}});background-size:100%;"></view>
             <view class="element_bottom">
                 <view class="element_item_name">海底世界</view>
                 <view class="element_tools_list">

@@ -7,7 +7,29 @@
 </swiper>
 <view class="bodycenter">
     <view class="userline">
-        <view class="userinfo"></view>
-        <view class="time"></view>
+        <view class="userinfo">
+            <image class="userimg" src="{{baseUrlImg + 'tx_200_03.png'}}"></image>
+            <view class="usertext">
+                <view style="font-size:26rpx;color:#202123;margin-bottom:10rpx;">陈信宏同学</view>
+                <view style="font-size:20rpx;color:#202123;opacity: 0.4;">广东省深圳市景田小学</view>
+            </view>
+        </view>
+        <view class="time">7小时前</view>
     </view>
+    <view class="productName">有趣的灯光</view>
+    <view class="productLine">
+        <view class="iconlineitem">
+            <image style="width:25rpx;height:25rpx;" src="{{baseUrlImg + 'icon_24_01.png'}}"></image>
+            <view style="font-size:20rpx;color:#202123;opacity:0.4;margin-left:10rpx;">100</view>
+        </view>
+        <view class="iconlineitem">
+            <image style="width:25rpx;height:25rpx;" src="{{baseUrlImg + 'icon_30_04.png'}}"></image>
+            <view style="font-size:20rpx;color:#202123;opacity:0.4;margin-left:10rpx;">100</view>
+        </view>
+        <view class="iconlineitem">
+            <image style="width:25rpx;height:25rpx;" src="{{baseUrlImg + 'icon_30_05.png'}}"></image>
+            <view style="font-size:20rpx;color:#202123;opacity:0.4;margin-left:10rpx;">100</view>
+        </view>
+    </view>
+    <view class="lines"></view>
 </view>

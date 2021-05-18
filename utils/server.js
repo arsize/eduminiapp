@@ -42,16 +42,17 @@ const HTTP = (options) => {
             method: methods,
             data: data,
             success: res => {
+                console.log('resx',res)
                 if (loading) {
                     wx.hideLoading();
                 }
-                if (res.data.code == 200 || res.header['Content-Type'] == "image/jpeg") {
+                if (res.data.status == 200 || res.header['Content-Type'] == "image/jpeg") {
                     resolve(res.data);
                 } else {
                     reject(res.data);
-                    let ignoreCode = [0, 180002, 180003, 6023, 6001, 6004, 7008, 6012]
-                    if (!ignoreCode.includes(res.data.code)) {
-                        if (res.data.code == 1003 || res.data.code == 1015) {
+                    let ignoreCode = []
+                    if (!ignoreCode.includes(res.data.status)) {
+                        if (res.data.status == 1003 || res.data.status == 1015) {
                             // token失效
                             wx.reLaunch({
                                 url: '/pages/loading/loading'

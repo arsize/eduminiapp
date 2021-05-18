@@ -16,3 +16,8 @@
     <text style="color:#466BC3;">登录代表您已同意</text>
     创新教育用户协议、隐私协议
 </view>
+<view class="dialogNoRegistered" wx:if="{{showRegistered}}">
+	<view class="dialogTop">手机账号未授权</view>
+	<view class="dialogBody">你已拒绝授权，请重新点击并授权</view>
+	<view bind:tap="canceldialog" class="bottomBar">知道了</view>
+</view>

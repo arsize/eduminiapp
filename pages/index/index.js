@@ -12,7 +12,6 @@ Page({
     onShow() {
         app.initTabBar(this, 'tourist', 0);
         this.checkLoginStatus().then(res => {
-            console.log('xxx', res)
 
         })
 
@@ -37,7 +36,7 @@ Page({
                             url: "wxLogin?code=" + res.code,
                             methods: "post",
                         }).then(login => {
-                            console.log('login', login)
+                            wx.setStorageSync("logindata", login.data);
                             resolve(true)
                         })
                     }
@@ -51,6 +50,11 @@ Page({
     gotosearch() {
         wx.navigateTo({
             url: "/pages/search/search"
+        })
+    },
+    gotodetail() {
+        wx.navigateTo({
+            url: "/pages/projectdetail/projectdetail"
         })
     }
 });

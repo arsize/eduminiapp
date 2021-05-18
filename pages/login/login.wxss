@@ -47,5 +47,50 @@ page {
     transform: translate(-50%, -50%);
     font-size: 24rpx;
     color: white;
+}
 
+.dialogNoRegistered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 48rpx;
+    width: 560rpx;
+    height: 250rpx;
+    border-radius: 8rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialogNoRegistered .dialogTop {
+    font-size: 36rpx;
+    color: #000000;
+    line-height: 54rpx;
+    font-weight: bold;
+    margin-bottom: 28rpx;
+}
+
+.dialogNoRegistered .dialogBody {
+    font-size: 30rpx;
+    padding: 10rpx 0;
+    color: #888888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialogNoRegistered .bottomBar {
+    border-top: 1px solid #e5e5e5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #02bb00;
+    font-size: 36rpx;
 }

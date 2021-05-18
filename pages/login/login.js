@@ -40,23 +40,24 @@ Page({
     },
     registered(detail) {
         HTTP({
-            url: "/login/rigist",
+            url: `regist`,
             methods: "post",
             data: {
                 encryptedData: detail.encryptedData,
                 iv: detail.iv,
-                openId:wx.getStorageSync("logindata").openId,
-                sessionKey:wx.getStorageSync("logindata").sessionKey
+                openId: wx.getStorageSync("logindata").openId,
+                sessionKey: wx.getStorageSync("logindata").sessionKey
             }
         }).then(res => {
-            wx.setStorageSync("logindata", res.data);
+            console.log('resgus', res)
+            // wx.setStorageSync("logindata", res.data);
 
             wx.showToast({
                 title: `登录成功`,
                 icon: 'success',
                 duration: 2000
             })
-            this.userLogin()
+            // this.userLogin()
 
         })
     }

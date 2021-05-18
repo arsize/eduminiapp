@@ -6,10 +6,9 @@ Page({
         show: false,
         registered: ''
     },
-    //options(Object)
     onLoad: function (options) {
         let logindata = wx.getStorageSync("logindata")
-        let registered = false
+        let registered = logindata.isRegist
         this.setData({
             registered: registered
         })
@@ -37,7 +36,7 @@ Page({
         wx.navigateTo({
             url: "/pages/AboutUs/AboutUs"
         })
-        
+
 
     },
     gotoregis() {
