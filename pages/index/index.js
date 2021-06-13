@@ -1,4 +1,6 @@
-import { HTTP } from "../../utils/server";
+import {
+    HTTP
+} from "../../utils/server";
 var app = getApp()
 
 Page({
@@ -7,27 +9,51 @@ Page({
         banner_background: ['http://121.4.213.7/img/index_swiper_demo.jpg'],
         elements: [1, 2, 3, 4, 5],
         lineSwiper: ['全部作品', '人工智能', '奇思妙想', '生活妙招', '其他'],
-        lineActived: 0
+        lineActived: 0,
+        regitst: null
+    },
+    onLoad() {
+        this.checkLoginStatus().then(res => {
+            this.checkRole(res.data)
+        })
     },
     onShow() {
-        app.initTabBar(this, 'tourist', 0);
-        this.checkLoginStatus().then(res => {
+        let logindata = wx.getStorageSync('logindata')
+        this.checkRole(logindata)
+    },
+    // 判断角色以及登录状态
+    checkRole(logindata) {
+        if (logindata.isRegist == 1) {
+            // 已登录
+            this.setData({
+                regitst: true
+            })
+            let role = "teacher"
+            if (role == 'teacher') {
+                //角色是老师
+                app.initTabBar(this, 'teacher', 0)
+            }
+        } else {
+            // 未登录-游客
+            this.setData({
+                regitst: false
+            })
+            app.initTabBar(this, 'tourist', 0)
 
-        })
+        }
 
     },
     checkLoginStatus() {
         return new Promise((resolve, reject) => {
             this.login().then(res => {
-                resolve()
+                resolve(res)
             }, err => {
-                reject()
+                reject(err)
             })
 
         });
     },
     login() {
-        let that = this
         return new Promise((resolve, reject) => {
             wx.login({
                 success: (res) => {
@@ -37,12 +63,12 @@ Page({
                             methods: "post",
                         }).then(login => {
                             wx.setStorageSync("logindata", login.data);
-                            resolve(true)
+                            resolve(login)
                         })
                     }
                 },
                 fail: (err) => {
-                    reject()
+                    reject(err)
                 },
             })
         })

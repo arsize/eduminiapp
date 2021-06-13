@@ -17,3 +17,4 @@
 		<image style="width:29rpx;height:29rpx;" src="{{baseUrlImg+'icon_30_11.png'}}"></image>
 	</view>
 </view>
+<dialog></dialog>

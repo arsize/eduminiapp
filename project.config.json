@@ -40,7 +40,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.15.0",
+  "libVersion": "2.17.0",
   "appid": "wxd5f79e6fd9adcb1b",
   "projectname": "eduminimap",
   "debugOptions": {

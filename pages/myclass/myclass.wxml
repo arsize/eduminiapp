@@ -3,6 +3,8 @@
         <image style="width:293rpx;height:293rpx;" src="{{baseUrlImg+'tu_01.png'}}"></image>
     </view>
     <view style="color:#202123;font-size:30rpx;font-weight:bold;text-align:center;margin-top:40rpx;">班级是空的哟~</view>
-    <view style="width:186rpx;height:60rpx;display:flex;align-items:center;background: #013CBF;color:#fff;border-radius: 30px;justify-content: center;margin: 0 auto;margin-top:70rpx;font-size:26rpx;" bind:tap="gotologin">立即登录</view>
+    <view
+        style="width:186rpx;height:60rpx;display:flex;align-items:center;background: #013CBF;color:#fff;border-radius: 30px;justify-content: center;margin: 0 auto;margin-top:70rpx;font-size:26rpx;"
+        bind:tap="gotologin">立即创建</view>
 </view>
 <my-tabbar list="{{tabItemList}}"></my-tabbar>

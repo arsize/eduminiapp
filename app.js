@@ -13,6 +13,9 @@ App({
     initTabBar(app, role, activeIdx) {
         let tabItemObj = require("./utils/router")
         var tabItemList = tabItemObj[`${role}`]
+        if(!tabItemList){
+            return
+        }
         tabItemList.map(item => {
             item.active = false
         })

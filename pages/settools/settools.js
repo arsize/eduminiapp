@@ -20,6 +20,25 @@ Page({
         this.data.userId = userId
     },
     loginout() {
+        let that = this
+        let option = {
+            status: true,
+            title: '退出登录',
+            closeicon: true,
+            content: `是否确认退出登录`,
+            foot: [{
+                text: '取消',
+                cb: () => {}
+            }, {
+                text: `确定`,
+                cb: () => {
+                    that.realLogout()
+                }
+            }]
+        }
+        app.globalData.emitter.emit("dialogstatus", option)
+    },
+    realLogout(){
         HTTP({
             url: `wxLoginOut?token=${this.data.token}&&userId=${this.data.userId}`,
             methods: "post",
@@ -37,6 +56,5 @@ Page({
             }, 1000)
 
         })
-
     }
 });

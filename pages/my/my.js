@@ -7,18 +7,24 @@ Page({
         registered: ''
     },
     onLoad: function (options) {
-        let logindata = wx.getStorageSync("logindata")
-        let registered = logindata.isRegist
-        this.setData({
-            registered: registered
-        })
-        if (!registered) {
-            app.initTabBar(this, 'tourist', 1);
-        }
-
-
+       
     },
     onShow: function () {
+        let logindata = wx.getStorageSync("logindata")
+        this.setData({
+            registered: logindata.isRegist
+        })
+        this.setBottomBar()
+    },
+    setBottomBar(){
+        wx.hideHomeButton()
+        if(this.data.registered == 1){
+          //   已登录
+            app.initTabBar(this, 'teacher',3);
+        }else{
+          //   未登录
+          app.initTabBar(this, 'tourist',1);
+        }
     },
     gototools() {
         if (!this.data.registered) {
