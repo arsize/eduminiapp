@@ -28,10 +28,12 @@ Page({
             this.setData({
                 regitst: true
             })
-            let role = "teacher"
+            let role = "students"
             if (role == 'teacher') {
                 //角色是老师
                 app.initTabBar(this, 'teacher', 0)
+            }else if(role == 'students'){
+                app.initTabBar(this, 'students', 0)
             }
         } else {
             // 未登录-游客
