@@ -28,7 +28,7 @@ Page({
             this.setData({
                 regitst: true
             })
-            let role = "students"
+            let role = "teacher"
             if (role == 'teacher') {
                 //角色是老师
                 app.initTabBar(this, 'teacher', 0)
