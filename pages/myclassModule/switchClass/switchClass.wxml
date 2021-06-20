@@ -1,0 +1,18 @@
+<!-- pages/myclassModule/switchClass/switchClass.wxml -->
+<view class="switch-class">
+  <view class="switch-class-list">
+<block wx:for="{{3}}" wx:key="index">
+    <view class="switch-class-list__item">
+      <view class="left-cont">
+        <view class="title">小学四年级</view>
+        <view class="command">
+          <text>班级口令：</text>
+          <text user-select="true">123344555</text>
+          <text>(长按复制)</text>
+        </view>
+      </view>
+      <image src="../../../images/icon_30_11.png"></image>
+    </view>
+</block>
+  </view>
+</view>
