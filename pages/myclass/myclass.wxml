@@ -1,10 +1,73 @@
-<view>
-    <view style="width:100%;display: flex;justify-content: center;margin-top:166rpx;">
-        <image style="width:293rpx;height:293rpx;" src="{{baseUrlImg+'tu_01.png'}}"></image>
-    </view>
-    <view style="color:#202123;font-size:30rpx;font-weight:bold;text-align:center;margin-top:40rpx;">班级是空的哟~</view>
-    <view
-        style="width:186rpx;height:60rpx;display:flex;align-items:center;background: #013CBF;color:#fff;border-radius: 30px;justify-content: center;margin: 0 auto;margin-top:70rpx;font-size:26rpx;"
-        bind:tap="gotologin">立即创建</view>
+<view class="my-class">
+    <block wx:if="{{hasClass}}">
+        <view class="has-class-cont">
+            <view class="has-class-cont-top">
+                <view class="has-class-cont-top__type">
+                    <block wx:for="{{classTypeOperate}}" wx:key="index">
+                        <view class="has-class-cont-top__type-item" data-index="{{index}}" bind:tap="classOperate">
+                            <image src="../../images/{{item.img}}.png"></image>
+                            <text>{{item.title}}</text>
+                        </view>
+                    </block>
+                </view>
+                <view class="has-class-cont-top__info">
+                    <view class="title">小学四年级</view>
+                    <view class="command">
+                        <text>班级口令：</text>
+                        <text user-select="true">123344555</text>
+                        <text></text>
+                    </view>
+                </view>
+                <view class="has-class-cont-top__people">
+                    <block wx:for="{{statisticsList}}" wx:key="index">
+                        <view class="has-class-cont-top__people-item">
+                            <view class="number">{{item.num}}</view>
+                            <view class="text">{{item.title}}</view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <view class="has-class-cont-list">
+                <block wx:for="{{3}}" wx:key="index">
+                    <view class="has-class-cont-list__item">
+                        <view class="title">创新作业</view>
+                        <view class="time">2021-04-07 12:33</view>
+                        <view class="intro">测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</view>
+                        <view class="img">
+                            <block wx:for="{{4}}" wx:key="index">
+                                <image src="../../images/tu_01.png"></image>
+                            </block>
+                        </view>
+                        <view class="time-end">
+                            <image src="../../images/icon_30_10.png"></image>
+                            <text>截止时间：123344555</text>
+                        </view>
+                        <view class="submit">
+                            <block wx:for="{{3}}" wx:key="index">
+                                <view class="submit-item">
+                                    <text>111</text>
+                                    <text>已提交</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class="create-icon" bind:tap="joinCreateClass">
+                <image src="../../images/icon_40_04.png"></image>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{!hasClass}}">
+        <view style="width:100%;display: flex;justify-content: center;margin-top:166rpx;">
+            <image style="width:293rpx;height:293rpx;" src="{{baseUrlImg+'tu_01.png'}}"></image>
+        </view>
+        <view style="color:#202123;font-size:30rpx;font-weight:bold;text-align:center;margin-top:40rpx;">
+            班级是空的哟~
+        </view>
+        <view style="width:186rpx;height:60rpx;display:flex;align-items:center;background: #013CBF;color:#fff;border-radius: 30px;justify-content: center;margin: 0 auto;margin-top:70rpx;font-size:26rpx;" bind:tap="joinCreateClass">
+            立即创建
+        </view>
+    </block>
 </view>
 <my-tabbar list="{{tabItemList}}"></my-tabbar>
