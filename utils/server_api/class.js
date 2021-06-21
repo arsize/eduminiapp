@@ -8,6 +8,7 @@ export const getAllClass = (data) => {
     loading: true,
   });
 };
+
 export const createClass = (data) => {
   return HTTP({
     url: "createClass",
