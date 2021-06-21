@@ -1,15 +1,10 @@
 {
   "pages": [
-    "pages/myclass/myclass",
-
-    "pages/myclassModule/switchClass/switchClass",
-
-    "pages/myclassModule/transferClass/transferClass",
-
-    "pages/myclassModule/createClass/createClass",
-
     "pages/index/index",
-
+    "pages/myclass/myclass",
+    "pages/myclassModule/switchClass/switchClass",
+    "pages/myclassModule/transferClass/transferClass",
+    "pages/myclassModule/createClass/createClass",
     "pages/login/login",
     "pages/message/message",
     "pages/my/my",
