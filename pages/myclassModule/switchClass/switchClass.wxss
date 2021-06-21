@@ -1,0 +1,42 @@
+/* pages/myclassModule/switchClass/switchClass.wxss */
+.switch-class {
+  width: 100%;
+}
+
+.switch-class-list {
+  width: 90%;
+  margin: 20rpx auto;
+}
+.switch-class-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 32rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  border-radius: 28rpx;
+  background: #fff;
+}
+
+.switch-class-list__item .left-cont {
+}
+.switch-class-list__item .left-cont .title {
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 500;
+}
+.switch-class-list__item .left-cont .command {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.85);
+}
+.switch-class-list__item .left-cont .command text:nth-child(3) {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.switch-class-list__item image {
+  width: 32rpx;
+  height: 32rpx;
+}

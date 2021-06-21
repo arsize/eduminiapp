@@ -1,0 +1,16 @@
+<!--pages/myclassModule/transferClass/transferClass.wxml-->
+<view class="transfer-class">
+  <view class="transfer-class-title">
+  <text>转让班级</text>
+  <text>需输入转让老师的手机号码</text>
+</view>
+
+<view class="transfer-class-phone">
+   <input type="number" maxlength="11" bindinput="onInput" value="{{phone}}" placeholder="请输入手机号码" />
+ 
+</view>
+<view class="transfer-class-submit">
+   <button  plain="true" bind:tap="cancel">取消</button>
+  <button bind:tap="submit">转让</button>
+</view>
+</view>

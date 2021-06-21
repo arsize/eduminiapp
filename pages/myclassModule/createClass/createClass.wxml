@@ -1,0 +1,40 @@
+<!-- pages/myclassModule/createClass/createClass.wxml -->
+<view class="create-class">
+  <!-- <view class="create-class-input">
+    <text class="title">选择地区</text>
+    <view class="cont">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker color-black5">{{region[0]}}{{region[1]}}{{region[2]}}</view>
+      </picker>
+      <image src="../../../images/icon_30_11.png"></image>
+    </view>
+  </view>
+  <view class="create-class-input">
+    <text class="title">学校名称</text>
+    <view class="cont">
+      <input placeholder="请输入学校名称" />
+    </view>
+  </view> -->
+  <view class="create-class-input">
+    <text class="title">班级名称</text>
+    <view class="cont">
+      <input placeholder="请输入班级名称" maxlength="20" data-name="className" bindinput="onInput" value="{{params.className}}" />
+    </view>
+  </view>
+  <!-- <view class="create-class-input">
+    <text class="title">预设人数</text>
+    <view class="cont">
+      <input placeholder="请输入预设人数" />
+    </view>
+  </view>
+  <view class="create-class-upload" bind:tap="uploadImg">
+    <text class="title">添加照片</text>
+    <view class="cont">
+      +
+    </view>
+  </view> -->
+  <view class="create-class-submit">
+    <button plain="true" bind:tap="cancel">取消</button>
+    <button bind:tap="submit">创建</button>
+  </view>
+</view>
