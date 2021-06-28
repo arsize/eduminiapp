@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/TaskDetail/TaskDetail",
     "pages/myclass/myclass",
     "pages/myclassModule/switchClass/switchClass",
     "pages/myclassModule/transferClass/transferClass",
