@@ -1,11 +1,15 @@
 var app = getApp();
-
+import {
+  globalData
+} from "../../utils/global";
+import {
+  HTTP
+} from "../../utils/server";
 Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
     hasClass: true,
-    classTypeOperate: [
-      {
+    classTypeOperate: [{
         title: "创建班级",
         img: "icon_30_06",
       },
@@ -22,8 +26,7 @@ Page({
         img: "icon_30_08",
       },
     ],
-    statisticsList: [
-      {
+    statisticsList: [{
         title: "预设人数",
         num: 50,
       },
@@ -45,7 +48,9 @@ Page({
     this.setTopBar();
     this.setBottomTab();
   },
-  onShow: function () {},
+  onShow: function () {
+    this.getClassList()
+  },
   // 设置头部颜色
   setTopBar() {
     // let classList = [1,2,3]
@@ -66,6 +71,23 @@ Page({
       });
     }
   },
+
+  async getClassList() {
+    const loginData = wx.getStorageSync('logindata')
+    const result = await HTTP({
+      url: `getAllClass`,
+      methods: "get",
+      data: {
+        token: loginData.token
+      }
+    })
+    console.log("result", result);
+    if (result.status !== 200) {
+      return;
+    }
+
+  },
+
   classOperate: function (e) {
     console.log("classOperate", e.currentTarget.dataset.index);
     switch (e.currentTarget.dataset.index) {
