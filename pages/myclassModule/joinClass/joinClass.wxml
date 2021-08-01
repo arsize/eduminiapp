@@ -1,0 +1,16 @@
+<!--pages/myclassModule/joinClass/joinClass.wxml-->
+<view class="transfer-class">
+  <view class="transfer-class-title">
+  <text>加入班级</text>
+  <text>需输入加入班级名称和口令</text>
+</view>
+
+<view class="transfer-class-phone">
+   <input type="number" maxlength="11" bindinput="onInput" value="{{phone}}" placeholder="请输入手机号码" />
+ 
+</view>
+<view class="transfer-class-submit">
+   <button  plain="true" bind:tap="cancel">取消</button>
+  <button bind:tap="submit">加入</button>
+</view>
+</view>

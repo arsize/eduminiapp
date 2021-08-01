@@ -9,8 +9,12 @@ Page({
         title: "创建班级",
         img: "icon_30_06",
       },
+      // {
+      //   title: "转让班级",
+      //   img: "icon_30_07",
+      // },
       {
-        title: "转让班级",
+        title: "加入班级",
         img: "icon_30_07",
       },
       {
@@ -31,10 +35,10 @@ Page({
         title: "家长数",
         num: 50,
       },
-      {
-        title: "加入率",
-        num: 50,
-      },
+      // {
+      //   title: "加入率",
+      //   num: 50,
+      // },
     ],
   },
   onLoad() {
@@ -69,8 +73,10 @@ Page({
         this.joinCreateClass();
         break;
       case 1:
+        // pages/myclassModule/joinClass/joinClass
         wx.navigateTo({
-          url: "/pages/myclassModule/transferClass/transferClass",
+          // url: "/pages/myclassModule/transferClass/transferClass",
+          url: "/pages/myclassModule/joinClass/joinClass",
         });
         break;
       case 2:
