@@ -1,18 +1,26 @@
 <!-- pages/myclassModule/switchClass/switchClass.wxml -->
 <view class="switch-class">
   <view class="switch-class-list">
-<block wx:for="{{3}}" wx:key="index">
-    <view class="switch-class-list__item">
+
+<block wx:if="{{classList.length}}" >
+    <view wx:for="{{classList}}" wx:key="index" data-item="{{item}}" class="switch-class-list__item" bind:tap="switchClass">
       <view class="left-cont">
-        <view class="title">小学四年级</view>
+        <view class="title">{{item.className||'-'}}</view>
         <view class="command">
           <text>班级口令：</text>
-          <text user-select="true">123344555</text>
+          <text user-select="true">{{item.classPassword||'-'}}</text>
           <text>(长按复制)</text>
         </view>
       </view>
       <image src="../../../images/icon_30_11.png"></image>
     </view>
 </block>
+<block wx:else>
+  <view class="list-no-data">
+    暂无班级数据
+  </view>
+    
+</block>
+  
   </view>
 </view>

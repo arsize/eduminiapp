@@ -15,7 +15,8 @@
     "pages/search/search",
     "pages/settools/settools",
     "pages/checkverification/checkverification",
-    "pages/AboutUs/AboutUs"
+    "pages/AboutUs/AboutUs",
+    "pages/myTaskModule/taskDetail/taskDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -69,7 +69,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  /* width: 25%; */
+  width: 33%;
 }
 
 .has-class-cont-top__people-item .number {

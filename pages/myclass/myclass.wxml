@@ -11,10 +11,10 @@
                     </block>
                 </view>
                 <view class="has-class-cont-top__info">
-                    <view class="title">小学四年级</view>
+                    <view class="title">{{currClassCont.className||"-"}}</view>
                     <view class="command">
                         <text>班级口令：</text>
-                        <text user-select="true">123344555</text>
+                        <text user-select="true">{{currClassCont.classPassword||"-"}}</text>
                         <text></text>
                     </view>
                 </view>
@@ -28,27 +28,33 @@
                 </view>
             </view>
             <view class="has-class-cont-list">
-                <block wx:for="{{3}}" wx:key="index">
+                <block wx:for="{{homeWorkList}}" wx:key="index">
                     <view class="has-class-cont-list__item">
-                        <view class="title">创新作业</view>
-                        <view class="time">2021-04-07 12:33</view>
-                        <view class="intro">测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</view>
-                        <view class="img">
-                            <block wx:for="{{4}}" wx:key="index">
-                                <image src="../../images/tu_01.png"></image>
+                        <view class="title">{{item.homeworkName||'-'}}</view>
+                        <view class="time">{{item.createTime||'-'}}</view>
+                        <view class="intro">{{item.homeworkContent||''}}</view>
+                        <view class="img" wx:if="{{item.homeworkImgs}}">
+                            <block wx:for="{{item.homeworkImgs}}" data-item="{{itemImg}}" wx:key="index">
+                                <image src="{{itemImg}}"></image>
                             </block>
                         </view>
                         <view class="time-end">
                             <image src="../../images/icon_30_10.png"></image>
-                            <text>截止时间：123344555</text>
+                            <text>截止时间：{{item.updateTime||'-'}}</text>
                         </view>
                         <view class="submit">
-                            <block wx:for="{{3}}" wx:key="index">
                                 <view class="submit-item">
                                     <text>111</text>
                                     <text>已提交</text>
                                 </view>
-                            </block>
+                                <view class="submit-item">
+                                    <text>111</text>
+                                    <text>未提交</text>
+                                </view>
+                                <view class="submit-item">
+                                    <text>111</text>
+                                    <text>提交率</text>
+                                </view>
                         </view>
                     </view>
                 </block>
