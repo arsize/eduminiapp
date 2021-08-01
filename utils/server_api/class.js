@@ -1,10 +1,12 @@
-import { HTTP } from "../server";
+import {
+  HTTP
+} from "../server";
 
 // 获取班级列表
 export const getAllClass = (data) => {
   return HTTP({
     url: "getAllClass",
-    methods: "post",
+    methods: "get",
     data,
     loading: true,
   });
@@ -23,6 +25,16 @@ export const joinClass = (data) => {
   return HTTP({
     url: "joinClass",
     methods: "post",
+    data,
+    loading: true,
+  });
+};
+
+// 获取作业列表
+export const getClassHomeWork = (data) => {
+  return HTTP({
+    url: "homework/getClassHomeWork",
+    methods: "get",
     data,
     loading: true,
   });

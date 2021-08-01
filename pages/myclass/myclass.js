@@ -3,8 +3,9 @@ import {
   globalData
 } from "../../utils/global";
 import {
-  HTTP
-} from "../../utils/server";
+  getAllClass,
+  getClassHomeWork
+} from "../../utils/server_api/class";
 Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
@@ -43,13 +44,26 @@ Page({
       //   num: 50,
       // },
     ],
+    currClassCont: {},
+    homeWorkList: []
   },
-  onLoad() {
+  onLoad(e) {
     this.setTopBar();
     this.setBottomTab();
+    if (Object.keys(this.data.currClassCont).length == 0) {
+      this.getClassList()
+
+    }
   },
-  onShow: function () {
-    this.getClassList()
+  onShow: function (e) {
+    const pages = getCurrentPages();
+    console.log("pages", pages);
+    console.log("currClassCont", this.data.currClassCont);
+    if (Object.keys(this.data.currClassCont).length) {
+      this.getClassHomeWorkList(this.data.currClassCont.classId)
+    }
+
+
   },
   // 设置头部颜色
   setTopBar() {
@@ -74,17 +88,61 @@ Page({
 
   async getClassList() {
     const loginData = wx.getStorageSync('logindata')
-    const result = await HTTP({
-      url: `getAllClass`,
-      methods: "get",
-      data: {
+    try {
+      const result = await getAllClass({
         token: loginData.token
+
+      })
+      if (result.status !== 200) {
+        this.setData({
+          hasClass: false
+        })
+
+        return;
       }
-    })
-    console.log("result", result);
-    if (result.status !== 200) {
-      return;
+      if (result.data.length) {
+        const currItem = result.data[0];
+        this.setData({
+          hasClass: true,
+          currClassCont: currItem
+        })
+        this.getClassHomeWorkList(currItem.classId)
+
+      } else {
+        this.setData({
+          hasClass: false
+        })
+      }
+    } catch (error) {
+
     }
+
+
+  },
+
+  async getClassHomeWorkList(classId) {
+    try {
+      const loginData = wx.getStorageSync('logindata')
+      const result = await getClassHomeWork({
+        authCode: loginData.token,
+        classId,
+        currentPage: 1,
+        pageSize: 10
+
+      })
+      if (result.status !== 200) {
+        this.setData({
+          homeWorkList: []
+        })
+        return;
+      }
+      this.setData({
+        homeWorkList: result.data
+      })
+    } catch (error) {
+
+    }
+
 
   },
 

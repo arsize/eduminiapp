@@ -4,10 +4,12 @@
   <text>加入班级</text>
   <text>需输入加入班级名称和口令</text>
 </view>
-
-<view class="transfer-class-phone">
-   <input type="number" maxlength="11" bindinput="onInput" value="{{phone}}" placeholder="请输入手机号码" />
- 
+<!-- bindinput="onInput"-->
+<view class="transfer-class-input">
+   <input type="text" maxlength="50" bindinput="onInput" data-text="className" value="{{form.className}}" placeholder="请输入班级名称" />
+</view>
+<view class="transfer-class-input">
+   <input type="text" maxlength="30" value="{{form.classCode}}" bindinput="onInput" data-text="classCode" placeholder="请输入口令" />
 </view>
 <view class="transfer-class-submit">
    <button  plain="true" bind:tap="cancel">取消</button>

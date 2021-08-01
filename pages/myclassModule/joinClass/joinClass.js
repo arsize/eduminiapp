@@ -1,14 +1,18 @@
 // pages/myclassModule/joinClass/joinClass.js
-import { isPhoneNumber } from "../../../utils/util";
-import { joinClass } from "../../../utils/server_api/class";
+import {
+  isPhoneNumber
+} from "../../../utils/util";
+import {
+  joinClass
+} from "../../../utils/server_api/class";
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     form: {
-      className: "1111",
-      classCode: "33333",
+      className: "",
+      classCode: "",
     },
   },
 
@@ -28,9 +32,10 @@ Page({
   onShow: function () {},
 
   onInput: function (event) {
-    this.setData({
-      phone: event.detail.value,
-    });
+    console.log("event", event);
+    // this.setData({
+    //   phone: event.detail.value,
+    // });
   },
   cancel: function () {
     wx.navigateBack({
@@ -39,23 +44,26 @@ Page({
   },
 
   submit: function () {
-    if (!isPhoneNumber(this.data.phone)) {
+
+    if (!this.data.form.className || !this.data.form.classCode) {
       wx.showToast({
-        title: "请输入正确的手机号码",
+        title: "需输入加入班级名称和口令",
         icon: "none",
         duration: 2000,
       });
 
       return;
     }
+
     this.joinClass();
   },
-  joinClass: function () {
+  async joinClass() {
     try {
-      const result = joinClass(this.data.form);
+      const result = await joinClass(this.data.form);
+
       if (result.status === 200) {
         wx.showToast({
-          title: "创建成功",
+          title: "加入成功",
           icon: "success",
           duration: 2000,
         });

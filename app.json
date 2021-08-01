@@ -1,7 +1,11 @@
 {
   "pages": [
+    "pages/myclassModule/joinClass/joinClass",
+
     "pages/myclass/myclass",
+
     "pages/myclassModule/switchClass/switchClass",
+
     "pages/myclassModule/transferClass/transferClass",
     "pages/myclassModule/createClass/createClass",
     "pages/index/index",
@@ -15,7 +19,6 @@
     "pages/settools/settools",
     "pages/checkverification/checkverification",
     "pages/AboutUs/AboutUs",
-    "pages/myclassModule/joinClass/joinClass",
     "pages/myTaskModule/taskDetail/taskDetail"
   ],
   "window": {
