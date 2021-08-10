@@ -1,15 +1,11 @@
-// pages/myclassModule/switchClass/switchClass.js
-
-import {
-  getAllClass
-} from "../../../utils/server_api/class";
+// pages/myTaskModule/taskDetail/taskDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    classList: []
+
   },
 
   /**
@@ -30,41 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getClassList();
-  },
 
-  async getClassList() {
-    const loginData = wx.getStorageSync('logindata')
-    try {
-      const result = await getAllClass({
-        token: loginData.token
-      })
-      if (result.status !== 200) {
-        return;
-      }
-
-      this.setData({
-        classList: result.data
-      })
-
-      joinClass(this.data.form);
-    } catch (error) {
-
-    }
-
-
-  },
-
-  switchClass(e) {
-    const pages = getCurrentPages();
-    let prevPage = pages[pages.length - 2];
-    prevPage.setData({
-      currClassCont: e.currentTarget.dataset.item
-    })
-
-    wx.navigateBack({
-      item: e.currentTarget.dataset.item
-    });
   },
 
   /**

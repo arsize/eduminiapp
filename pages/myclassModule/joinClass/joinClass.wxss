@@ -1,0 +1,61 @@
+/* pages/myclassModule/joinClass/joinClass.wxss */
+page {
+  background: #fff;
+}
+.transfer-class {
+  width: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+.transfer-class-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.transfer-class-title text {
+  font-size: 32rpx;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.transfer-class-title text:nth-child(1) {
+  margin: 100rpx 0 10rpx 0;
+}
+.transfer-class-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+  border-radius: 40rpx;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.transfer-class-submit {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80rpx;
+}
+
+.transfer-class-submit button {
+  width: 48% !important;
+  height: 80rpx;
+  margin: 0;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+}
+
+.transfer-class-submit button:nth-child(1) {
+  border-color: rgb(1, 36, 178, 0.1) !important;
+  color: rgba(1, 36, 178, 0.45);
+}
+
+.transfer-class-submit button:nth-child(2) {
+  background: rgb(1, 36, 178, 0.5) !important;
+  color: rgba(255, 255, 255, 0.75);
+}

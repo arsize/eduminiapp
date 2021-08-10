@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/TaskDetail/TaskDetail",
+    "pages/myclassModule/joinClass/joinClass",
     "pages/myclass/myclass",
     "pages/myclassModule/switchClass/switchClass",
     "pages/myclassModule/transferClass/transferClass",
@@ -15,7 +16,8 @@
     "pages/search/search",
     "pages/settools/settools",
     "pages/checkverification/checkverification",
-    "pages/AboutUs/AboutUs"
+    "pages/AboutUs/AboutUs",
+    "pages/myTaskModule/taskDetail/taskDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

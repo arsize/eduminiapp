@@ -1,16 +1,25 @@
 var app = getApp();
-
+import {
+  globalData
+} from "../../utils/global";
+import {
+  getAllClass,
+  getClassHomeWork
+} from "../../utils/server_api/class";
 Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
     hasClass: true,
-    classTypeOperate: [
-      {
+    classTypeOperate: [{
         title: "创建班级",
         img: "icon_30_06",
       },
+      // {
+      //   title: "转让班级",
+      //   img: "icon_30_07",
+      // },
       {
-        title: "转让班级",
+        title: "加入班级",
         img: "icon_30_07",
       },
       {
@@ -18,8 +27,7 @@ Page({
         img: "icon_30_08",
       },
     ],
-    statisticsList: [
-      {
+    statisticsList: [{
         title: "预设人数",
         num: 50,
       },
@@ -31,17 +39,32 @@ Page({
         title: "家长数",
         num: 50,
       },
-      {
-        title: "加入率",
-        num: 50,
-      },
+      // {
+      //   title: "加入率",
+      //   num: 50,
+      // },
     ],
+    currClassCont: {},
+    homeWorkList: []
   },
-  onLoad() {
+  onLoad(e) {
     this.setTopBar();
     this.setBottomTab();
+    if (Object.keys(this.data.currClassCont).length == 0) {
+      this.getClassList()
+
+    }
   },
-  onShow: function () {},
+  onShow: function (e) {
+    const pages = getCurrentPages();
+    console.log("pages", pages);
+    console.log("currClassCont", this.data.currClassCont);
+    if (Object.keys(this.data.currClassCont).length) {
+      this.getClassHomeWorkList(this.data.currClassCont.classId)
+    }
+
+
+  },
   // 设置头部颜色
   setTopBar() {
     // let classList = [1,2,3]
@@ -62,6 +85,67 @@ Page({
       });
     }
   },
+
+  async getClassList() {
+    const loginData = wx.getStorageSync('logindata')
+    try {
+      const result = await getAllClass({
+        token: loginData.token
+
+      })
+      if (result.status !== 200) {
+        this.setData({
+          hasClass: false
+        })
+
+        return;
+      }
+      if (result.data.length) {
+        const currItem = result.data[0];
+        this.setData({
+          hasClass: true,
+          currClassCont: currItem
+        })
+        this.getClassHomeWorkList(currItem.classId)
+
+      } else {
+        this.setData({
+          hasClass: false
+        })
+      }
+    } catch (error) {
+
+    }
+
+
+  },
+
+  async getClassHomeWorkList(classId) {
+    try {
+      const loginData = wx.getStorageSync('logindata')
+      const result = await getClassHomeWork({
+        authCode: loginData.token,
+        classId,
+        currentPage: 1,
+        pageSize: 10
+
+      })
+      if (result.status !== 200) {
+        this.setData({
+          homeWorkList: []
+        })
+        return;
+      }
+      this.setData({
+        homeWorkList: result.data
+      })
+    } catch (error) {
+
+    }
+
+
+  },
+
   classOperate: function (e) {
     console.log("classOperate", e.currentTarget.dataset.index);
     switch (e.currentTarget.dataset.index) {
@@ -69,8 +153,10 @@ Page({
         this.joinCreateClass();
         break;
       case 1:
+        // pages/myclassModule/joinClass/joinClass
         wx.navigateTo({
-          url: "/pages/myclassModule/transferClass/transferClass",
+          // url: "/pages/myclassModule/transferClass/transferClass",
+          url: "/pages/myclassModule/joinClass/joinClass",
         });
         break;
       case 2:
