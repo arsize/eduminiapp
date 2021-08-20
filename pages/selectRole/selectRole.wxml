@@ -1,0 +1,15 @@
+<view class="role">
+  <image class="bg" src="../../images/bj_01.png"></image>
+  <view class="rolename">我是学生</view>
+  <image class="userimg" src="../../images/tx_200_01.png"></image>
+</view>
+<view class="role" style="padding-top:0;">
+  <image class="bg" src="../../images/bj_02.png"></image>
+  <view class="rolename">我是家长</view>
+  <image class="userimg" src="../../images/tx_200_02.png"></image>
+</view>
+<view class="role" style="padding-top:0;">
+  <image class="bg" src="../../images/bj_03.png"></image>
+  <view class="rolename">我是老师</view>
+  <image class="userimg" src="../../images/tx_200_03.png"></image>
+</view>

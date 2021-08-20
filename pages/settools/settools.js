@@ -38,7 +38,7 @@ Page({
         }
         app.globalData.emitter.emit("dialogstatus", option)
     },
-    realLogout(){
+    realLogout() {
         HTTP({
             url: `wxLoginOut?token=${this.data.token}&&userId=${this.data.userId}`,
             methods: "post",
@@ -55,6 +55,16 @@ Page({
                 })
             }, 1000)
 
+        })
+    },
+    setpersoninfo() {
+        wx.navigateTo({
+            url: '/pages/changeUserInfo/changeUserInfo',
+        })
+    },
+    setpassword() {
+        wx.navigateTo({
+            url: '/pages/changePassword/changePassword',
         })
     }
 });

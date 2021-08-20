@@ -48,14 +48,14 @@ page {
 }
 
 .line-swiper {
-    width: 90%;
-    margin: 0 auto;
-    height: 42rpx;
-    display: flex;
+    width: 100%;
     white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #000;
+    margin-bottom: 33rpx;
+    margin-top: 33rpx;
+    padding: 0 32rpx;
+    padding-left: 0;
 }
 
 .line-swiper::-webkit-scrollbar {
@@ -66,8 +66,10 @@ page {
 }
 
 .line-swiper .swiper-item {
+    display: inline-block;
     width: 136rpx;
-    margin-right: 56rpx;
+    margin-right: 21rpx;
+    text-align: center;
 }
 
 .swiper-item .line {

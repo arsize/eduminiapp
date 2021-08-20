@@ -1,4 +1,4 @@
-<view class="settools">
+<view class="settools" bindtap="setpassword">
 	<view class="left" style="margin-left:40rpx;">
 		<image style="width:30rpx;height:30rpx;margin-right:16rpx;" src="{{baseUrlImg + 'icon_30_16.png'}}"></image>
 		<view style="margin-bottom:5rpx;font-size:30rpx;">修改密码</view>
@@ -7,8 +7,17 @@
 		<image style="width:29rpx;height:29rpx;" src="{{baseUrlImg+'icon_30_11.png'}}"></image>
 	</view>
 </view>
+<view class="settools" bindtap="setpersoninfo">
+	<view class="left" style="margin-left:40rpx;">
+		<image style="width:30rpx;height:30rpx;margin-right:16rpx;" src="{{baseUrlImg + 'icon_30_10.png'}}"></image>
+		<view style="margin-bottom:5rpx;font-size:30rpx;">修改个人信息</view>
+	</view>
+	<view class="right" style="margin-right:39rpx;">
+		<image style="width:29rpx;height:29rpx;" src="{{baseUrlImg+'icon_30_11.png'}}"></image>
+	</view>
+</view>
 
-<view class="settools" bindtap = "loginout">
+<view class="settools" bindtap="loginout">
 	<view class="left" style="margin-left:40rpx;">
 		<image style="width:30rpx;height:30rpx;margin-right:16rpx;" src="{{baseUrlImg + 'icon_30_17.png'}}"></image>
 		<view style="margin-bottom:5rpx;font-size:30rpx;"> 退出账号</view>

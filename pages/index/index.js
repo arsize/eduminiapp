@@ -8,8 +8,9 @@ Page({
         baseUrlImg: app.globalData.baseUrlImg,
         banner_background: ['http://121.4.213.7/img/index_swiper_demo.jpg'],
         elements: [1, 2, 3, 4, 5],
-        lineSwiper: ['全部作品', '人工智能', '奇思妙想', '生活妙招', '其他'],
+        lineSwiper: [],
         lineActived: 0,
+        scrollLeft: 0,
         regitst: null
     },
     onLoad() {
@@ -20,6 +21,51 @@ Page({
     onShow() {
         let logindata = wx.getStorageSync('logindata')
         this.checkRole(logindata)
+        this.getClass()
+    },
+    getClass() {
+        HTTP({
+            url: "/work/getWorkType",
+            methods: "get",
+            data: {}
+        }).then(res => {
+            let temp = res.data
+            temp.unshift({
+                name: '全部',
+            })
+            this.setData({
+                lineSwiper: temp
+            })
+        })
+    },
+    getProduct() {
+        HTTP({
+            url: "/work/getWork",
+            methods: 'get',
+            data: {
+                currentPage: 1,
+                pageSize: 20,
+                type: this.data.lineActived == 0 ? 0 : this.data.lineSwiper[this.data.lineActived].id
+            }
+        }).then(res => {
+
+        })
+    },
+    selectClass(e) {
+        let index = e.currentTarget.dataset.set
+        this.setData({
+            lineActived: index
+        })
+        if (index == 3 || index == 4) {
+            this.setData({
+                scrollLeft: 40
+            })
+        } else {
+            this.setData({
+                scrollLeft: 0
+            })
+        }
+        this.getProduct()
     },
     // 判断角色以及登录状态
     checkRole(logindata) {
@@ -32,7 +78,7 @@ Page({
             if (role == 'teacher') {
                 //角色是老师
                 app.initTabBar(this, 'teacher', 0)
-            }else if(role == 'students'){
+            } else if (role == 'students') {
                 app.initTabBar(this, 'students', 0)
             }
         } else {

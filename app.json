@@ -17,7 +17,10 @@
     "pages/settools/settools",
     "pages/checkverification/checkverification",
     "pages/AboutUs/AboutUs",
-    "pages/myTaskModule/taskDetail/taskDetail"
+    "pages/myTaskModule/taskDetail/taskDetail",
+    "pages/changeUserInfo/changeUserInfo",
+    "pages/changePassword/changePassword",
+    "pages/selectRole/selectRole"
   ],
   "window": {
     "backgroundTextStyle": "light",

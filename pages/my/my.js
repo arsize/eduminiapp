@@ -4,7 +4,8 @@ Page({
     data: {
         baseUrlImg: app.globalData.baseUrlImg,
         show: false,
-        registered: ''
+        registered: '',
+        message:""
     },
     onLoad: function (options) {
        
