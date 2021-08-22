@@ -1,6 +1,10 @@
 // pages/myclassModule/createClass/createClass.js
-import { HTTP } from "../../../utils/server";
-import { createClass } from "../../../utils/server_api/class";
+import {
+  HTTP
+} from "../../../utils/server";
+import {
+  createClass
+} from "../../../utils/server_api/class";
 
 Page({
   /**
@@ -71,7 +75,11 @@ Page({
 
   createClass: async function () {
     try {
-      const result = await createClass(this.data.params);
+      const loginData = wx.getStorageSync('logindata')
+      const result = await createClass({
+        ...this.data.params,
+        token: loginData.token
+      });
       if (result.data.status !== 200) {
         return;
       }

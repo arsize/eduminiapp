@@ -31,11 +31,17 @@ Page({
    */
   onShow: function () {},
 
-  onInput: function (event) {
-    console.log("event", event);
-    // this.setData({
-    //   phone: event.detail.value,
-    // });
+  onInput: function (e) {
+    console.log("e", e.currentTarget.dataset.text);
+    console.log("e", e.detail.value);
+
+    this.setData({
+      form: {
+        ...this.data.form,
+        [e.currentTarget.dataset.text]: e.detail.value,
+
+      }
+    });
   },
   cancel: function () {
     wx.navigateBack({
@@ -44,7 +50,7 @@ Page({
   },
 
   submit: function () {
-
+    console.log("this.data.form", this.data.form);
     if (!this.data.form.className || !this.data.form.classCode) {
       wx.showToast({
         title: "需输入加入班级名称和口令",
@@ -59,7 +65,12 @@ Page({
   },
   async joinClass() {
     try {
-      const result = await joinClass(this.data.form);
+      const loginData = wx.getStorageSync('logindata')
+
+      const result = await joinClass({
+        ...this.data.form,
+        token: loginData.token
+      });
 
       if (result.status === 200) {
         wx.showToast({

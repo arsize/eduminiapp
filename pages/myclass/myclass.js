@@ -124,7 +124,7 @@ Page({
     try {
       const loginData = wx.getStorageSync('logindata')
       const result = await getClassHomeWork({
-        authCode: loginData.token,
+        token: loginData.token,
         classId,
         currentPage: 1,
         pageSize: 10

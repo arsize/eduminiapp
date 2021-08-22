@@ -1,11 +1,20 @@
-// pages/myTaskModule/taskDetail/taskDetail.js
+// pages/taskModule/taskListDetail/taskListDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    submitTypeList: [{
+        title: "已提交",
+        value: 12
+      },
+      {
+        title: "未提交",
+        value: 122
+      },
+    ],
+    activeType: 0
   },
 
   /**
@@ -27,6 +36,12 @@ Page({
    */
   onShow: function () {
 
+  },
+  changeSubmitType(e) {
+    console.log("e", e);
+    this.setData({
+      activeType:e.currentTarget.dataset.index
+    })
   },
 
   /**

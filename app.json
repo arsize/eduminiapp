@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/taskModule/taskListDetail/taskListDetail",
+
     "pages/index/index",
+
     "pages/TaskDetail/TaskDetail",
     "pages/myclassModule/joinClass/joinClass",
     "pages/myclass/myclass",
@@ -17,7 +20,6 @@
     "pages/settools/settools",
     "pages/checkverification/checkverification",
     "pages/AboutUs/AboutUs",
-    "pages/myTaskModule/taskDetail/taskDetail",
     "pages/changeUserInfo/changeUserInfo",
     "pages/changePassword/changePassword",
     "pages/selectRole/selectRole"
