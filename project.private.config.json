@@ -13,38 +13,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/login/login",
-          "pathName": "pages/login/login",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/projectdetail/projectdetail",
-          "pathName": "pages/projectdetail/projectdetail",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/myclass/myclass",
-          "pathName": "pages/myclass/myclass",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/changeUserInfo/changeUserInfo",
-          "pathName": "pages/changeUserInfo/changeUserInfo",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/changePassword/changePassword",
-          "pathName": "pages/changePassword/changePassword",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/selectRole/selectRole",
-          "pathName": "pages/selectRole/selectRole",
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
           "query": "",
           "scene": null
         }
