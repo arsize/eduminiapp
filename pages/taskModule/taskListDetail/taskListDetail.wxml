@@ -3,19 +3,19 @@
   <view class="task-list-detail-class__detail">
     <view class="task-list-detail-class__detail__top">
       <view class="task-list-detail-class__detail-title">
-        <text>02月25日</text>
-        <text>02月25日</text>
+        <text>{{taskDetail.homeworkName||'-'}}</text>
+        <text>{{taskDetail.createTime||'-'}}</text>
       </view>
     </view>
     <view class="task-list-detail-class__detail-cont">
-      哈哈哈哈哈哈哈哈哈哈哈，哈哈哈哈哈哈哈哈哈哈哈。
+      {{taskDetail.homeworkContent||'-'}}
     </view>
-    <view class="task-list-detail-class__detail-img">
-      <image wx:for="{{8}}" wx:key="index" class="task-pic" src="../../../images/bg-main.png" mode="widthFix" lazy-load="false" />
+    <view wx:if="{{item.homeworkImgs}}" class="task-list-detail-class__detail-img">
+      <image wx:for="{{item.homeworkImgs}}" data-item="{{itemImg}}" wx:key="index" class="task-pic" src="{{itemImg}}" mode="widthFix" lazy-load="false" />
     </view>
     <view class="task-list-detail-class__detail-time-end">
       <image src="../../../images/icon_30_10.png"></image>
-      <text>截止时间：{{item.updateTime||'-'}}</text>
+      <text>截止时间：{{taskDetail.updateTime||'-'}}</text>
     </view>
     <view class="task-list-detail-class__detail-type">
       <view wx:for="{{submitTypeList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" class="{{activeType===index?'task-list-detail-class__detail-type-cont border-active':'task-list-detail-class__detail-type-cont'}}" bind:tap="changeSubmitType">

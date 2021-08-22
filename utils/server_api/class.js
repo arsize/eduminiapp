@@ -18,7 +18,7 @@ export const createClass = (data) => {
     methods: "post",
     data,
     loading: true,
-    // type: "form-data"
+    type: "application/x-www-form-urlencoded"
 
   });
 };
@@ -29,7 +29,7 @@ export const joinClass = (data) => {
     methods: "post",
     data,
     loading: true,
-    type: "form-data"
+    type: "application/x-www-form-urlencoded"
   });
 };
 

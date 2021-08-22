@@ -2,9 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/taskModule/taskListDetail/taskListDetail",
-
-    
-
     "pages/TaskDetail/TaskDetail",
     "pages/myclassModule/joinClass/joinClass",
     "pages/myclass/myclass",
