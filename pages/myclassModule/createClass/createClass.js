@@ -80,7 +80,7 @@ Page({
         ...this.data.params,
         token: loginData.token
       });
-      if (result.data.status !== 200) {
+      if (result.status !== 200) {
         return;
       }
       wx.showToast({

@@ -14,7 +14,26 @@ Page({
         value: 122
       },
     ],
-    activeType: 0
+    activeType: 0,
+    taskDetail: {
+      classId: 90,
+      count: null,
+      createBy: 228,
+      createTime: "2021-07-11 21:00:31",
+      currPage: null,
+      endTime: "",
+      homeworkContent: "",
+      homeworkId: 123,
+      homeworkImgs: null,
+      homeworkName: "2021年科技节",
+      pageSize: 10,
+      sort: null,
+      sortName: null,
+      startRow: 0,
+      startTime: null,
+      updateTime: "2021-07-11 21:00:31",
+
+    }
   },
 
   /**
@@ -22,6 +41,13 @@ Page({
    */
   onLoad: function (options) {
 
+    console.log("options", options);
+    if(options.item){
+      this.setData({
+        taskDetail:JSON.parse(options.item)
+      })
+    }
+    console.log(this.data.taskDetail);
   },
 
   /**
@@ -40,7 +66,7 @@ Page({
   changeSubmitType(e) {
     console.log("e", e);
     this.setData({
-      activeType:e.currentTarget.dataset.index
+      activeType: e.currentTarget.dataset.index
     })
   },
 

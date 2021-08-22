@@ -147,7 +147,7 @@ Page({
   },
 
   classOperate: function (e) {
-    console.log("classOperate", e.currentTarget.dataset.index);
+
     switch (e.currentTarget.dataset.index) {
       case 0:
         this.joinCreateClass();
@@ -167,6 +167,15 @@ Page({
       default:
         break;
     }
+  },
+  joinTask(e) {
+    console.log("joinTask", e);
+    // const item = JSON.stringfy(e.currentTarget.dataset.item);
+    const item = JSON.stringify(e.currentTarget.dataset.item);
+
+    wx.navigateTo({
+      url: `/pages/taskModule/taskListDetail/taskListDetail?item=${item}`
+    })
   },
   joinCreateClass: function () {
     wx.navigateTo({

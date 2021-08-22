@@ -32,9 +32,6 @@ Page({
   onShow: function () {},
 
   onInput: function (e) {
-    console.log("e", e.currentTarget.dataset.text);
-    console.log("e", e.detail.value);
-
     this.setData({
       form: {
         ...this.data.form,
