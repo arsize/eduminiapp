@@ -11,7 +11,9 @@ Page({
         lineSwiper: [],
         lineActived: 0,
         scrollLeft: 0,
-        regitst: null
+        regitst: null,
+        showpailie: false,
+        showpailieIndex:0
     },
     onLoad() {
         this.checkLoginStatus().then(res => {
@@ -63,11 +65,17 @@ Page({
         }
 
     },
+    showpailiefn() {
+        this.setData({
+            showpailie: !this.data.showpailie
+        })
+    },
     getProduct() {
         HTTP({
             url: "/work/getWork",
             methods: 'get',
             data: {
+                desc:this.data.showpailieIndex,
                 currentPage: 1,
                 pageSize: 20,
                 type: this.data.lineActived == 0 ? 0 : this.data.lineSwiper[this.data.lineActived].id
@@ -80,6 +88,7 @@ Page({
     },
     selectClass(e) {
         let index = e.currentTarget.dataset.set
+      
         this.setData({
             lineActived: index
         })
@@ -157,5 +166,14 @@ Page({
         wx.navigateTo({
             url: "/pages/projectdetail/projectdetail"
         })
+    },
+    selectBtn(e){
+        console.log(e)
+        let item = e.currentTarget.dataset.set
+        this.setData({
+            showpailieIndex:item,
+            showpailie:false
+        })
+        this.getProduct()
     }
 });
