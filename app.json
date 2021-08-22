@@ -1,11 +1,7 @@
 {
   "pages": [
-    "pages/taskModule/taskListDetail/taskListDetail",
-
     "pages/index/index",
-
-
-
+    "pages/taskModule/taskListDetail/taskListDetail",
     "pages/TaskDetail/TaskDetail",
     "pages/myclassModule/joinClass/joinClass",
     "pages/myclass/myclass",
@@ -24,7 +20,8 @@
     "pages/AboutUs/AboutUs",
     "pages/changeUserInfo/changeUserInfo",
     "pages/changePassword/changePassword",
-    "pages/selectRole/selectRole"
+    "pages/selectRole/selectRole",
+    "pages/otherUrl/otherUrl"
   ],
   "window": {
     "backgroundTextStyle": "light",

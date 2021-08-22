@@ -5,7 +5,8 @@ Page({
         baseUrlImg: app.globalData.baseUrlImg,
         show: false,
         registered: '',
-        message:""
+        message:"",
+        userInfo:null
     },
     onLoad: function (options) {
        
@@ -13,7 +14,8 @@ Page({
     onShow: function () {
         let logindata = wx.getStorageSync("logindata")
         this.setData({
-            registered: logindata.isRegist
+            registered: logindata.isRegist,
+            userInfo:logindata.userInfo
         })
         this.setBottomBar()
     },
