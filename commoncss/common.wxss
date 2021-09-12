@@ -24,3 +24,10 @@
   font-size: 28rpx;
   color: #666;
 }
+
+.select-border-active{
+  color: rgba(1, 36, 178,.8) !important;
+  border: 2rpx solid rgba(1, 36, 178,.5) !important;
+
+
+}

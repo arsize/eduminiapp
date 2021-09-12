@@ -9,6 +9,7 @@ import {
 Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
+    loading:false,
     hasClass: true,
     classTypeOperate: [{
         title: "创建班级",
@@ -113,6 +114,9 @@ Page({
           hasClass: false
         })
       }
+      this.setData({
+        loading:true
+      })
     } catch (error) {
 
     }

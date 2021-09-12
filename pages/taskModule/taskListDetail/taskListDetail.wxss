@@ -190,6 +190,7 @@
   width: 40rpx;
   height: 40rpx;
   margin-right: 20rpx;
+  border-radius: 50%;
 }
 
 .task-list-detail-class__list-item__wrap-bottom .belong text {

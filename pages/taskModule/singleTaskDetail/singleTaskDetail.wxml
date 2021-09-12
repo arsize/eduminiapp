@@ -1,0 +1,66 @@
+<!--pages/taskModule/singleTaskDetail/singleTaskDetail.wxml-->
+<view class="single-task-detail">
+  <view class="single-task-detail__swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image src="../../../images/bg-main.png" alt="" />
+          <!-- <view class="swiper-item {{item}}"></view> -->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="single-task-detail__content">
+    <view class="content-top">
+      <view class="content-top__user">
+        <image src="../../../images/tx_05.png"></image>
+        <view class="content-top__user__info">
+          <text>同学</text>
+          <text>地址地址地址地址地址地址地址地址地址地址地址地址地址地址</text>
+        </view>
+      </view>
+      <view class="content-top__hour">7小时前</view>
+      <view class="content-top__sign">待评改</view>
+    </view>
+    <view class="content-title">
+      <text>{{taskDetail.homeworkName||'-'}}</text>
+      <view class="about">
+              <view class="about__num">
+                <image class="about-pic" src="../../../images/icon_24_02.png" mode="widthFix" lazy-load="false" />
+                <text>{{taskDetail.commentNum}}</text>
+              </view>
+              <view class="about__num">
+                <image class="about-pic" src="../../../images/icon_24_03.png" mode="widthFix" lazy-load="false" />
+                <text>{{taskDetail.zanNum}}</text>
+              </view>
+            </view>
+    </view>
+    <view class="content-analysis">
+      <text>设计灵感：</text>
+      <text>设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感设计灵感</text>
+    </view>
+  </view>
+  <view class="interval"></view>
+  <view class="single-task-detail__rate">
+    <view class="select_rate">
+      <view class="label">评级</view>
+      <view class="rate">
+        <block wx:for="{{rateList}}" wx:key="index">
+          <text bindtap="selectRate" data-index="{{index}}" data-item="{{item}}" class="{{selectRateIndex===index?'select-border-active':''}}">{{item}}</text>
+        </block>
+      </view>
+
+    </view>
+    <view class="comment">
+      <input class="comment-input" value="{{form.comment}}"  maxlength="10" bindinput="bindKeyInput" placeholder="请输入评语"/>
+    </view>
+    <view class="submit">
+    <view class="on-off">
+    <text>公开</text>
+      <switch checked="{{true}}" color="rgb(1, 36, 178)" bindchange="switch1Change"/>
+    </view>
+    <button class="mini-btn" disabled="{{!form.comment||!form.selectRate}}" type="primary" bindtap="submitOperate" size="mini">确定</button>
+    </view>
+  </view>
+
+</view>

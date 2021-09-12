@@ -1,4 +1,7 @@
 // pages/taskModule/taskListDetail/taskListDetail.js
+import {
+  getSubmitHomeWork
+} from "../../../utils/server_api/task.js";
 Page({
 
   /**
@@ -33,7 +36,9 @@ Page({
       startTime: null,
       updateTime: "2021-07-11 21:00:31",
 
-    }
+    },
+    hasSubmitList:[],
+    noSubmitList:[],
   },
 
   /**
@@ -61,12 +66,49 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getSubmitHomeWorkOperate()
   },
   changeSubmitType(e) {
     console.log("e", e);
     this.setData({
       activeType: e.currentTarget.dataset.index
+    })
+  },
+
+  async getSubmitHomeWorkOperate(){
+    const loginData = wx.getStorageSync('logindata')
+    const result = await getSubmitHomeWork({
+      token: loginData.token,
+      classId:this.data.taskDetail.classId,
+      homeworkId:this.data.taskDetail.homeworkId,
+      currentPage: 1,
+      pageSize: 10
+
+    })
+    if (result.status !== 200) {
+      this.setData({
+        hasSubmitList:[],
+        noSubmitList:[]
+
+      })
+      return;
+    }
+
+    this.data.submitTypeList[0].value = result.data?.hwSubmitCount ||0;
+    this.data.submitTypeList[1].value = result.data?.unSubmitCount ||0;
+
+    this.setData({
+      hasSubmitList:result.data?.hwSubmit||[],
+      noSubmitList:result.data?.unSubmit||[],
+      submitTypeList:this.data.submitTypeList
+    })
+  },
+
+  joinDetail(e) {
+    const item = JSON.stringify(e.currentTarget.dataset.item);
+
+    wx.navigateTo({
+      url: `/pages/taskModule/singleTaskDetail/singleTaskDetail?item=${item}`
     })
   },
 
