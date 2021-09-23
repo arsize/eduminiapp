@@ -1,5 +1,5 @@
 <view class="my-class">
-    <block wx:if="{{hasClass}}">
+    <block wx:if="{{hasClass&&loading}}">
         <view class="has-class-cont">
             <view class="has-class-cont-top">
                 <view class="has-class-cont-top__type">
@@ -29,10 +29,10 @@
             </view>
             <view class="has-class-cont-list">
                 <block wx:for="{{homeWorkList}}" wx:key="index">
-                    <view class="has-class-cont-list__item">
-                        <view class="title">{{item.homeworkName||'-'}}</view>
+                    <view class="has-class-cont-list__item" data-item="{{item}}" bind:tap="joinTask">
+                        <view class="title">{{item.homeworkName||'-'}}111</view>
                         <view class="time">{{item.createTime||'-'}}</view>
-                        <view class="intro">{{item.homeworkContent||''}}</view>
+                        <view class="intro">{{item.homeworkContent||'-'}}</view>
                         <view class="img" wx:if="{{item.homeworkImgs}}">
                             <block wx:for="{{item.homeworkImgs}}" data-item="{{itemImg}}" wx:key="index">
                                 <image src="{{itemImg}}"></image>
@@ -64,7 +64,7 @@
             </view>
         </view>
     </block>
-    <block wx:if="{{!hasClass}}">
+    <block wx:if="{{!hasClass&&loading}}">
         <view style="width:100%;display: flex;justify-content: center;margin-top:166rpx;">
             <image style="width:293rpx;height:293rpx;" src="{{baseUrlImg+'tu_01.png'}}"></image>
         </view>

@@ -1,9 +1,18 @@
-.color-black5 {
-  color: rgba(0, 0, 0, 0.5);
-}
 
 .color-black {
   color: rgba(0, 0, 0, 1);
+}
+.color-black8 {
+  color: rgba(0, 0, 0, 0.8);
+}
+.color-black5 {
+  color: rgba(0, 0, 0, 0.5);
+}
+.color-blue8 {
+  color: rgba(1, 36, 178,.8);
+}
+.color-blue5 {
+  color: rgba(1, 36, 178,.5);
 }
 
 .list-no-data {
@@ -14,4 +23,11 @@
   font-weight: 400;
   font-size: 28rpx;
   color: #666;
+}
+
+.select-border-active{
+  color: rgba(1, 36, 178,.8) !important;
+  border: 2rpx solid rgba(1, 36, 178,.5) !important;
+
+
 }

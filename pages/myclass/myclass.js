@@ -9,6 +9,7 @@ import {
 Page({
   data: {
     baseUrlImg: app.globalData.baseUrlImg,
+    loading:false,
     hasClass: true,
     classTypeOperate: [{
         title: "创建班级",
@@ -113,6 +114,9 @@ Page({
           hasClass: false
         })
       }
+      this.setData({
+        loading:true
+      })
     } catch (error) {
 
     }
@@ -124,7 +128,7 @@ Page({
     try {
       const loginData = wx.getStorageSync('logindata')
       const result = await getClassHomeWork({
-        authCode: loginData.token,
+        token: loginData.token,
         classId,
         currentPage: 1,
         pageSize: 10
@@ -147,7 +151,7 @@ Page({
   },
 
   classOperate: function (e) {
-    console.log("classOperate", e.currentTarget.dataset.index);
+
     switch (e.currentTarget.dataset.index) {
       case 0:
         this.joinCreateClass();
@@ -167,6 +171,15 @@ Page({
       default:
         break;
     }
+  },
+  joinTask(e) {
+    console.log("joinTask", e);
+    // const item = JSON.stringfy(e.currentTarget.dataset.item);
+    const item = JSON.stringify(e.currentTarget.dataset.item);
+
+    wx.navigateTo({
+      url: `/pages/taskModule/taskListDetail/taskListDetail?item=${item}`
+    })
   },
   joinCreateClass: function () {
     wx.navigateTo({

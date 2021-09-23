@@ -18,6 +18,8 @@ export const createClass = (data) => {
     methods: "post",
     data,
     loading: true,
+    type: "application/x-www-form-urlencoded"
+
   });
 };
 // 加入班级
@@ -27,6 +29,7 @@ export const joinClass = (data) => {
     methods: "post",
     data,
     loading: true,
+    type: "application/x-www-form-urlencoded"
   });
 };
 

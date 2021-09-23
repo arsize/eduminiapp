@@ -105,6 +105,20 @@ page {
 .center_line .time {
     font-size: 24rpx;
     color: silver;
+    position: relative;
+}
+
+.pailie {
+    position: absolute;
+    top: 60rpx;
+    z-index: 1000;
+    right: 50rpx;
+    border-radius: 10rpx;
+}
+
+.pailie .item {
+    font-size: 24rpx;
+    padding: 15rpx 30rpx;
 }
 
 .bujucontent {
@@ -175,4 +189,12 @@ page {
     font-size: 28rpx;
     color: #202123;
     font-weight: bold;
+}
+.pailieactived{
+    background-color: #417CFF;
+    color: white;
+}
+.pailienone{
+    background-color: white;
+    color: silver;
 }

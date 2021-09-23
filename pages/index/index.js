@@ -6,12 +6,14 @@ var app = getApp()
 Page({
     data: {
         baseUrlImg: app.globalData.baseUrlImg,
-        banner_background: ['http://121.4.213.7/img/index_swiper_demo.jpg'],
-        elements: [1, 2, 3, 4, 5],
+        banner_background: [],
+        elements: [],
         lineSwiper: [],
         lineActived: 0,
         scrollLeft: 0,
-        regitst: null
+        regitst: null,
+        showpailie: false,
+        showpailieIndex:0
     },
     onLoad() {
         this.checkLoginStatus().then(res => {
@@ -22,6 +24,8 @@ Page({
         let logindata = wx.getStorageSync('logindata')
         this.checkRole(logindata)
         this.getClass()
+        this.getBanner()
+        this.getProduct()
     },
     getClass() {
         HTTP({
@@ -38,21 +42,53 @@ Page({
             })
         })
     },
+    getBanner() {
+        HTTP({
+            url: "/getBanner",
+            methods: 'get',
+            data: {}
+        }).then(res => {
+            this.setData({
+                banner_background: res.data
+            })
+        })
+    },
+    gotoOtherUrl(e) {
+        let item = e.currentTarget.dataset.set
+        if (item.url.indexOf("http") != -1) {
+            console.log("跳转外链")
+            wx.navigateTo({
+                url: '/pages/otherUrl/otherUrl?url=' + item.url,
+            })
+        } else {
+            console.log("跳转路由")
+        }
+
+    },
+    showpailiefn() {
+        this.setData({
+            showpailie: !this.data.showpailie
+        })
+    },
     getProduct() {
         HTTP({
             url: "/work/getWork",
             methods: 'get',
             data: {
+                desc:this.data.showpailieIndex,
                 currentPage: 1,
                 pageSize: 20,
                 type: this.data.lineActived == 0 ? 0 : this.data.lineSwiper[this.data.lineActived].id
             }
         }).then(res => {
-
+            this.setData({
+                elements: res.data.workList
+            })
         })
     },
     selectClass(e) {
         let index = e.currentTarget.dataset.set
+      
         this.setData({
             lineActived: index
         })
@@ -130,5 +166,14 @@ Page({
         wx.navigateTo({
             url: "/pages/projectdetail/projectdetail"
         })
+    },
+    selectBtn(e){
+        console.log(e)
+        let item = e.currentTarget.dataset.set
+        this.setData({
+            showpailieIndex:item,
+            showpailie:false
+        })
+        this.getProduct()
     }
 });

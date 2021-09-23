@@ -34,6 +34,11 @@ page {
   border-radius: 40rpx;
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
+.transfer-class-input input{
+  margin:0 auto;
+  width: 80%;
+
+}
 .transfer-class-submit {
   width: 100%;
   display: flex;

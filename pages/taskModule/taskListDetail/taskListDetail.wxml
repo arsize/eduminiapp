@@ -1,0 +1,75 @@
+<!--pages/taskModule/taskListDetail/taskListDetail.wxml-->
+<view class="task-list-detail-class">
+  <view class="task-list-detail-class__detail">
+    <view class="task-list-detail-class__detail__top">
+      <view class="task-list-detail-class__detail-title">
+        <text>{{taskDetail.homeworkName||'-'}}</text>
+        <text>{{taskDetail.createTime||'-'}}</text>
+      </view>
+    </view>
+    <view class="task-list-detail-class__detail-cont">
+      {{taskDetail.homeworkContent||'-'}}
+    </view>
+    <view wx:if="{{item.homeworkImgs}}" class="task-list-detail-class__detail-img">
+      <image wx:for="{{item.homeworkImgs}}" data-item="{{itemImg}}" wx:key="index" class="task-pic" src="{{itemImg}}" mode="widthFix" lazy-load="false" />
+    </view>
+    <view class="task-list-detail-class__detail-time-end">
+      <image src="../../../images/icon_30_10.png"></image>
+      <text>截止时间：{{taskDetail.updateTime||'-'}}</text>
+    </view>
+    <view class="task-list-detail-class__detail-type">
+      <view wx:for="{{submitTypeList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" class="{{activeType===index?'task-list-detail-class__detail-type-cont border-active':'task-list-detail-class__detail-type-cont'}}" bind:tap="changeSubmitType">
+        <text class="{{activeType===index?'color-blue8':''}}">{{item.value}}</text>
+        <text class="{{activeType===index?'color-blue5':''}}">{{item.title}}</text>
+      </view>
+     
+    </view>
+  </view>
+
+  <view class="task-list-detail-class__list">
+  <block wx:if="{{activeType===0}}" >
+     <view wx:for="{{hasSubmitList}}" wx:key="index" class="task-list-detail-class_has__list-item" data-item="{{item}}" bind:tap="joinDetail">
+      <view class="task-list-detail-class__list-item_top">
+        <image class="list-pic" src="{{item.showImg}}" mode="widthFix" lazy-load="false" />
+        <view class="task-list-detail-class__list-item__wrap">
+          <view class="task-list-detail-class__list-item__wrap-top">
+            <view class="title">{{item.homeworkName||'-'}}</view>
+            <view class="about">
+              <view class="about__num">
+                <image class="about-pic" src="../../../images/icon_24_02.png" mode="widthFix" lazy-load="false" />
+                <text>{{item.commentNum}}</text>
+              </view>
+              <view class="about__num">
+                <image class="about-pic" src="../../../images/icon_24_03.png" mode="widthFix" lazy-load="false" />
+                <text>{{item.zanNum}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="task-list-detail-class__list-item__wrap-bottom">
+            <view class="belong">
+              <image class="" src="{{item.hwImg}}" lazy-load="false" />
+              <text>{{item.desc||'-'}}</text>
+            </view>
+            <view class="time">{{item.createTime||'-'}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{item.desc}}" class="task-list-detail-class__list-item_bottom">
+        <text>评语</text>
+        <text>{{item.desc||'-'}}</text>
+      </view>
+    </view> 
+  </block>
+    <view wx:if="{{activeType===1}}"  class="task-list-detail-class_no__list-item">
+      <view class="submit-btn">提交作业</view>
+     
+        <view wx:for="{{8}}" wx:key="index" class="list_item">
+          <image class="list-pic" src="../../../images/bg-main.png" mode="widthFix" lazy-load="false" />
+          <view class="list_item_right">
+            <text>同学</text>
+            <text>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,229 @@
+/* pages/taskModule/singleTaskDetail/singleTaskDetail.wxss */
+page {
+  background: #fff;
+}
+
+.single-task-detail {
+  width: 100%;
+}
+
+.single-task-detail__swiper {
+  width: 100%;
+  /* height: 300rpx; */
+}
+
+.single-task-detail__swiper swiper swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.single-task-detail__content {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.single-task-detail__content .content-top {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-task-detail__content .content-top .content-top__user {
+  display: flex;
+  align-items: center;
+  width: 55%;
+  /* background: green; */
+}
+
+.single-task-detail__content .content-top .content-top__user image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+
+.single-task-detail__content .content-top .content-top__user .content-top__user__info {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  /* background: red; */
+
+}
+
+.single-task-detail__content .content-top .content-top__user .content-top__user__info text:nth-child(1) {
+  font-size: 34rpx;
+  color: rgba(0, 0, 0, .85);
+}
+
+.single-task-detail__content .content-top .content-top__user .content-top__user__info text:nth-child(2) {
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, .45);
+}
+
+.single-task-detail__content .content-top .content-top__hour {
+
+  padding: 6rpx 12rpx;
+  font-size: 26rpx;
+  color: rgba(1, 36, 178, .4);
+  border-radius: 6rpx;
+  background: rgba(1, 36, 178, .1);
+}
+
+.single-task-detail__content .content-top .content-top__sign {
+  position: absolute;
+  top: -32rpx;
+  left: 61%;
+  width: 120rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background: rgb(242, 171, 98);
+}
+
+.single-task-detail__content .content-title {
+  padding: 40rpx 0;
+  border-bottom: 2rpx solid rgba(0, 0, 0, .15);
+
+}
+
+.single-task-detail__content .content-title text {
+  font-size: 36rpx;
+  color: rgba(0, 0, 0, .85);
+
+}
+
+.single-task-detail__content .content-title .about {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.single-task-detail__content .content-title .about .about__num {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 40rpx;
+}
+
+.single-task-detail__content .content-title .about .about__num .about-pic {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 10rpx 0 0;
+}
+
+.single-task-detail__content .content-title .about text {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.single-task-detail__content .content-analysis {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, .85);
+
+}
+
+.single-task-detail__rate {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+  border-top: 2rpx solid rgba(0, 0, 0, .15);
+  background: #fff;
+}
+
+.single-task-detail__rate .select_rate {
+  display: flex;
+  align-items: center;
+
+}
+
+.single-task-detail__rate .select_rate .label {
+  margin-right: 30rpx;
+  font-size: 36rpx;
+  color: rgba(0, 0, 0, .85);
+}
+
+.single-task-detail__rate .select_rate .rate {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.single-task-detail__rate .select_rate .rate text {
+  padding: 8rpx 20rpx;
+  font-size: 36rpx;
+  color: rgba(0, 0, 0, .85);
+  border-radius: 8rpx;
+  border: 2rpx solid rgba(0, 0, 0, .15);
+}
+
+.single-task-detail__rate .comment {
+  width: 100%;
+  border-radius: 35rpx;
+  background: #eee;
+}
+
+.single-task-detail__rate .comment .comment-input {
+  margin: 30rpx auto 0;
+  width: 95%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+}
+
+ .single-task-detail .interval{
+width: 100%;
+height: 380rpx;
+}
+
+.single-task-detail__rate .submit {
+  width: 100%;
+}
+
+.single-task-detail__rate .submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+
+}
+
+
+.single-task-detail__rate .submit .on-off text {
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, .45);
+
+}
+
+.single-task-detail__rate .submit .on-off switch {
+  transform: scale(.6)
+}
+
+.single-task-detail__rate .submit .mini-btn{
+  width: 180rpx;
+height: 80rpx;
+line-height: 80rpx;
+border-radius: 60rpx;
+font-weight: 400;
+font-size: 28rpx;
+color:#fff;
+background: rgba(1, 36, 178, .85);
+
+}
+.single-task-detail__rate .submit button[disabled] {
+  color: #fff !important;
+background: rgba(1, 36, 178, .45);
+ 
+}

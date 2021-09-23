@@ -1,9 +1,13 @@
 {
   "pages": [
+    "pages/taskModule/singleTaskDetail/singleTaskDetail",
+
+    "pages/taskModule/taskListDetail/taskListDetail",
+
+    "pages/myclass/myclass",
     "pages/index/index",
     "pages/TaskDetail/TaskDetail",
     "pages/myclassModule/joinClass/joinClass",
-    "pages/myclass/myclass",
     "pages/myclassModule/switchClass/switchClass",
     "pages/myclassModule/transferClass/transferClass",
     "pages/myclassModule/createClass/createClass",
@@ -17,10 +21,10 @@
     "pages/settools/settools",
     "pages/checkverification/checkverification",
     "pages/AboutUs/AboutUs",
-    "pages/myTaskModule/taskDetail/taskDetail",
     "pages/changeUserInfo/changeUserInfo",
     "pages/changePassword/changePassword",
-    "pages/selectRole/selectRole"
+    "pages/selectRole/selectRole",
+    "pages/otherUrl/otherUrl"
   ],
   "window": {
     "backgroundTextStyle": "light",
