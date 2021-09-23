@@ -17,6 +17,12 @@
           "pathName": "pages/my/my",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/projectdetail/projectdetail",
+          "pathName": "pages/projectdetail/projectdetail",
+          "query": "",
+          "scene": null
         }
       ]
     }

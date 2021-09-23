@@ -29,14 +29,17 @@
             <van-icon name="{{showpailie?'arrow-up':'arrow-down'}}" />
         </view>
         <view class="pailie" wx:if="{{showpailie}}">
-            <view bindtap="selectBtn" data-set="0" class="{{showpailieIndex == 0?'pailieactived':'pailienone'}} item">正序</view>
-            <view bindtap="selectBtn" data-set="1" class="{{showpailieIndex == 1?'pailieactived':'pailienone'}} item">倒序</view>
+            <view bindtap="selectBtn" data-set="0" class="{{showpailieIndex == 0?'pailieactived':'pailienone'}} item">正序
+            </view>
+            <view bindtap="selectBtn" data-set="1" class="{{showpailieIndex == 1?'pailieactived':'pailienone'}} item">倒序
+            </view>
         </view>
 
     </view>
-    <view class="body_content">
-        <view class="element_item" wx:for="{{elements}}" wx:key="index">
-            <view class="element_top" bind:tap="gotodetail"
+    <view class="body_content" wx:if="{{elements && elements.length > 0}}">
+
+        <view class="element_item" bind:tap="gotodetail" data-set="{{item}}" wx:for="{{elements}}" wx:key="index">
+            <view class="element_top"
                 style="background: url({{item.showImg?item.showImg:baseUrlImg + 'index_project_covers.jpg'}});background-size:100%;">
             </view>
             <view class="element_bottom">
@@ -61,6 +64,12 @@
                 </view>
             </view>
         </view>
+
+
+
+    </view>
+    <view style="width: 100%;text-align: center;" wx:else>
+        <view style="color: #999;margin-top: 100rpx;font-size: 28rpx;">暂无作品展示</view>
     </view>
 </view>
 <my-tabbar list="{{tabItemList}}"></my-tabbar>

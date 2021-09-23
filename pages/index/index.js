@@ -13,7 +13,7 @@ Page({
         scrollLeft: 0,
         regitst: null,
         showpailie: false,
-        showpailieIndex:0
+        showpailieIndex: 0
     },
     onLoad() {
         this.checkLoginStatus().then(res => {
@@ -75,7 +75,7 @@ Page({
             url: "/work/getWork",
             methods: 'get',
             data: {
-                desc:this.data.showpailieIndex,
+                desc: this.data.showpailieIndex,
                 currentPage: 1,
                 pageSize: 20,
                 type: this.data.lineActived == 0 ? 0 : this.data.lineSwiper[this.data.lineActived].id
@@ -88,7 +88,7 @@ Page({
     },
     selectClass(e) {
         let index = e.currentTarget.dataset.set
-      
+
         this.setData({
             lineActived: index
         })
@@ -162,17 +162,19 @@ Page({
             url: "/pages/search/search"
         })
     },
-    gotodetail() {
+    gotodetail(e) {
+        let item = e.currentTarget.dataset.set
+        wx.setStorageSync('students_product', item)
         wx.navigateTo({
             url: "/pages/projectdetail/projectdetail"
         })
     },
-    selectBtn(e){
+    selectBtn(e) {
         console.log(e)
         let item = e.currentTarget.dataset.set
         this.setData({
-            showpailieIndex:item,
-            showpailie:false
+            showpailieIndex: item,
+            showpailie: false
         })
         this.getProduct()
     }

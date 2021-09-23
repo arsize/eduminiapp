@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/taskModule/singleTaskDetail/singleTaskDetail",
 
     "pages/taskModule/taskListDetail/taskListDetail",
 
     "pages/myclass/myclass",
-    "pages/index/index",
+   
     "pages/TaskDetail/TaskDetail",
     "pages/myclassModule/joinClass/joinClass",
     "pages/myclassModule/switchClass/switchClass",
